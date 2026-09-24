@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wish Jinny - Rub the Lamp, Get Offers!</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #f7fafc;
@@ -18,17 +13,36 @@
             line-height: 1.6;
             width: 100%;
         }
-
-        header {
+        
+        /* Banner Header */
+        .banner-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 25px 40px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+        .banner-header h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 3px 20px rgba(0,0,0,0.4);
+        }
+        .banner-header p {
+            font-size: 24px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        header {
+            background: #2d3748;
+            padding: 20px 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             width: 100%;
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -36,33 +50,26 @@
             max-width: 1600px;
             margin: 0 auto;
         }
-
         .logo {
             font-size: 36px;
             font-weight: 800;
             color: white;
             text-decoration: none;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 600;
             font-size: 17px;
         }
-
+        
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 80px 40px;
+            background: white;
+            padding: 60px 40px;
             text-align: center;
             width: 100%;
         }
-
         .hero-image {
             max-width: 500px;
             width: 100%;
@@ -72,64 +79,86 @@
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
             animation: float 3s ease-in-out infinite;
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
         }
-
+        
         .video-section {
-            background: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 80px 40px;
             text-align: center;
             width: 100%;
         }
-
         .video-section h2 {
-            font-size: 40px;
-            margin-bottom: 40px;
-            color: #2d3748;
+            font-size: 44px;
+            margin-bottom: 50px;
+            color: white;
             font-weight: 700;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
         }
-
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
         }
-
         .video-card {
-            background: #1a202c;
-            border-radius: 20px;
+            background: white;
+            border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 15px 50px rgba(0,0,0,0.3);
         }
-
         .video-placeholder {
             width: 100%;
-            height: 250px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
             color: white;
-            font-size: 20px;
+            font-size: 22px;
             flex-direction: column;
             gap: 15px;
         }
-
-        .video-placeholder span {
-            font-size: 60px;
-        }
-
+        .video-placeholder span { font-size: 70px; }
         .video-card h3 {
-            padding: 20px;
-            color: white;
-            font-size: 18px;
+            padding: 25px;
+            color: #2d3748;
+            font-size: 20px;
+            font-weight: 700;
         }
-
+        
+        .lamp-intro-section {
+            background: white;
+            padding: 80px 40px;
+            text-align: center;
+            width: 100%;
+        }
+        .lamp-intro-section h2 {
+            font-size: 44px;
+            margin-bottom: 30px;
+            color: #2d3748;
+            font-weight: 700;
+        }
+        .lamp-intro-section p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: #4a5568;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .lamp-intro-image {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+        }
+        
         .genie-lamp-section {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             padding: 100px 40px;
@@ -137,26 +166,22 @@
             color: white;
             width: 100%;
         }
-
         .genie-lamp-section h2 {
-            font-size: 46px;
+            font-size: 48px;
             margin-bottom: 25px;
             text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             font-weight: 800;
         }
-
         .genie-lamp-section p {
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 50px;
             opacity: 0.95;
         }
-
         .lamp-container {
             position: relative;
             max-width: 600px;
             margin: 0 auto;
         }
-
         .lamp-image {
             max-width: 400px;
             width: 100%;
@@ -167,11 +192,7 @@
             display: block;
             margin: 0 auto;
         }
-
-        .lamp-image:hover {
-            transform: scale(1.05);
-        }
-
+        .lamp-image:hover { transform: scale(1.05); }
         .fog {
             position: absolute;
             top: -100px;
@@ -184,81 +205,67 @@
             opacity: 0;
             pointer-events: none;
         }
-
-        .fog.active {
-            animation: fogRise 2s ease-out;
-        }
-
+        .fog.active { animation: fogRise 2s ease-out; }
         @keyframes fogRise {
             0% { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.5); }
             50% { opacity: 0.7; }
             100% { opacity: 0; transform: translateX(-50%) translateY(-200px) scale(1.5); }
         }
-
         .offer-popup {
             position: absolute;
             background: white;
             color: #2d3748;
-            padding: 18px 30px;
-            border-radius: 12px;
+            padding: 20px 35px;
+            border-radius: 15px;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             opacity: 0;
             pointer-events: none;
             white-space: nowrap;
         }
-
-        .offer-popup.active {
-            animation: popupFloat 2.5s ease-out;
-        }
-
+        .offer-popup.active { animation: popupFloat 2.5s ease-out; }
         @keyframes popupFloat {
             0% { opacity: 0; transform: translateY(0) scale(0.8); }
             20% { opacity: 1; transform: translateY(-20px) scale(1); }
             80% { opacity: 1; }
             100% { opacity: 0; transform: translateY(-100px) scale(1.1); }
         }
-
         .offer-1 { top: 10%; left: 10%; background: #fed7e2; }
         .offer-2 { top: 5%; right: 10%; background: #c6f6d5; }
         .offer-3 { bottom: 25%; left: 15%; background: #feebc8; }
         .offer-4 { bottom: 20%; right: 10%; background: #bee3f8; }
-
         .rub-instruction {
             margin-top: 40px;
-            font-size: 20px;
+            font-size: 22px;
             opacity: 0.9;
             background: rgba(255,255,255,0.2);
-            padding: 18px 40px;
+            padding: 20px 45px;
             border-radius: 50px;
             display: inline-block;
             font-weight: 600;
         }
-
+        
         .categories {
             background: #f7fafc;
-            padding: 80px 40px;
+            padding: 100px 40px;
             width: 100%;
         }
-
         .categories h2 {
             text-align: center;
-            font-size: 42px;
-            margin-bottom: 60px;
+            font-size: 48px;
+            margin-bottom: 70px;
             color: #2d3748;
             font-weight: 700;
         }
-
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 25px;
+            gap: 35px;
             max-width: 1600px;
             margin: 0 auto;
             width: 100%;
         }
-
         .category-card {
             background: white;
             border-radius: 50%;
@@ -270,31 +277,28 @@
             display: flex;
             flex-direction: column;
         }
-
         .category-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            transform: translateY(-12px) scale(1.08);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
         }
-
         .category-image {
             width: 100%;
-            height: 70%;
+            height: 72%;
             object-fit: cover;
             display: block;
         }
-
         .category-card h3 {
-            padding: 15px;
-            font-size: 16px;
+            padding: 18px;
+            font-size: 18px;
             color: #2d3748;
-            font-weight: 600;
+            font-weight: 700;
             text-align: center;
             flex-grow: 1;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
+        
         footer {
             background: #2d3748;
             color: white;
@@ -302,7 +306,6 @@
             text-align: center;
             width: 100%;
         }
-
         .footer-links {
             display: flex;
             justify-content: center;
@@ -310,54 +313,52 @@
             margin-bottom: 25px;
             flex-wrap: wrap;
         }
-
         .footer-links a {
             color: #a0aec0;
             text-decoration: none;
             font-size: 16px;
         }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .copyright {
-            color: #718096;
-            font-size: 15px;
-        }
-
+        .footer-links a:hover { color: white; }
+        .copyright { color: #718096; font-size: 15px; }
+        
         @media (max-width: 1200px) {
-            .categories-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+            .categories-grid { grid-template-columns: repeat(4, 1fr); }
         }
-
         @media (max-width: 768px) {
-            .categories-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .hero-image { max-width: 350px; }
-            .video-placeholder { height: 200px; }
+            .categories-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero-image, .lamp-intro-image { max-width: 350px; }
+            .video-placeholder { height: 220px; }
             .lamp-image { max-width: 300px; }
+            .banner-header h1 { font-size: 42px; }
+            .banner-header p { font-size: 18px; }
         }
     </style>
 </head>
 <body>
+    <!-- Banner Header -->
+    <section class="banner-header">
+        <h1>Wish Jinny</h1>
+        <p>Rub the Lamp, Get Amazing Offers!</p>
+    </section>
+    
     <header>
         <div class="header-content">
             <a href="#" class="logo">Wish Jinny</a>
             <nav class="nav-links">
                 <a href="#video">Video</a>
+                <a href="#lamp-intro">Lamp</a>
                 <a href="#genie-lamp">Rub Lamp</a>
                 <a href="#categories">Categories</a>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Image -->
     <section class="hero">
         <img src="assets/pfront-genie-lamp.png" alt="Wish Jinny Lamp" class="hero-image">
     </section>
 
+    <!-- Video Section -->
     <section class="video-section" id="video">
         <h2>Watch How It Works</h2>
         <div class="video-grid">
@@ -385,6 +386,14 @@
         </div>
     </section>
 
+    <!-- Lamp Intro Section -->
+    <section class="lamp-intro-section" id="lamp-intro">
+        <h2>Discover the Magic Lamp</h2>
+        <p>Rub the magical genie lamp and unlock amazing offers, discounts, and coupons!</p>
+        <img src="assets/lamp-rub.png" alt="Magic Lamp" class="lamp-intro-image">
+    </section>
+
+    <!-- Interactive Genie Lamp Section -->
     <section class="genie-lamp-section" id="genie-lamp">
         <h2>Rub the Lamp, Get Amazing Offers!</h2>
         <p>Click on the lamp to reveal exclusive discounts</p>
@@ -401,6 +410,7 @@
         <div class="rub-instruction">👆 Click on the lamp to rub it!</div>
     </section>
 
+    <!-- Categories Section -->
     <section class="categories" id="categories">
         <h2>Shop by Category</h2>
         <div class="categories-grid">
