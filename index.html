@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wish Jinny - Premium Gift Finder</title>
+    <title>Wish Jinny - Rub the Lamp, Get Offers!</title>
     <style>
         * {
             margin: 0;
@@ -12,28 +12,26 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f7fafc;
             color: #2d3748;
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .header-content {
@@ -43,178 +41,262 @@
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #667eea;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
             text-decoration: none;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-links a {
-            color: #4a5568;
+            color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            font-size: 16px;
+            transition: opacity 0.3s;
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            opacity: 0.8;
         }
 
-        /* Hero Section */
+        /* Hero Image Section */
         .hero {
-            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
             text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 22px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .hero-image {
-            max-width: 400px;
+            max-width: 450px;
+            width: 100%;
             height: auto;
-            margin: 40px auto;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
             animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
-        .cta-button {
-            display: inline-block;
+        /* Video Section */
+        .video-section {
             background: white;
-            color: #667eea;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        /* Features Section */
-        .features {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .features h2 {
+            padding: 60px 0;
             text-align: center;
-            font-size: 42px;
-            margin-bottom: 60px;
+        }
+
+        .video-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
             color: #2d3748;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 40px;
-            border-radius: 20px;
-            background: #f7fafc;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-
-        .feature-card p {
-            color: #4a5568;
-            line-height: 1.8;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .how-it-works h2 {
-            text-align: center;
-            font-size: 42px;
-            margin-bottom: 60px;
-        }
-
-        .steps {
+        .video-container {
             max-width: 800px;
             margin: 0 auto;
-            display: grid;
-            gap: 30px;
-        }
-
-        .step {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
+            background: #000;
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
-        .step-number {
-            background: white;
-            color: #f5576c;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .video-placeholder {
+            width: 100%;
+            height: 450px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 20px;
-            flex-shrink: 0;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            font-size: 18px;
         }
 
-        .step-text {
+        /* Interactive Genie Lamp Section */
+        .genie-lamp-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .genie-lamp-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        }
+
+        .genie-lamp-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .lamp-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .lamp-image {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.4));
+        }
+
+        .lamp-image:hover {
+            transform: scale(1.05);
+        }
+
+        .lamp-image:active {
+            transform: scale(0.98);
+        }
+
+        /* Fog Animation */
+        .fog {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            animation: none;
+        }
+
+        .fog.active {
+            animation: fogRise 2s ease-out;
+        }
+
+        @keyframes fogRise {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(0) scale(0.5);
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-200px) scale(1.5);
+            }
+        }
+
+        /* Offer Popups */
+        .offer-popup {
+            position: absolute;
+            background: white;
+            color: #2d3748;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            opacity: 0;
+            pointer-events: none;
+            animation: none;
+        }
+
+        .offer-popup.active {
+            animation: popupFloat 2.5s ease-out;
+        }
+
+        @keyframes popupFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.8);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(-20px) scale(1);
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(1.1);
+            }
+        }
+
+        .offer-1 { top: 20%; left: 20%; background: #fed7e2; }
+        .offer-2 { top: 15%; right: 25%; background: #c6f6d5; }
+        .offer-3 { bottom: 30%; left: 30%; background: #feebc8; }
+        .offer-4 { bottom: 25%; right: 20%; background: #bee3f8; }
+
+        .rub-instruction {
+            margin-top: 30px;
             font-size: 18px;
-            line-height: 1.6;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Categories Section */
+        .categories {
+            background: #f7fafc;
+            padding: 60px 0;
+        }
+
+        .categories h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .category-card h3 {
+            padding: 20px;
+            font-size: 18px;
+            color: #2d3748;
+            font-weight: 600;
+            text-align: center;
         }
 
         /* Footer */
@@ -230,6 +312,7 @@
             justify-content: center;
             gap: 30px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -249,26 +332,27 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+            .hero-image {
+                max-width: 350px;
             }
-
-            .hero p {
-                font-size: 18px;
+            .video-placeholder {
+                height: 250px;
             }
-
+            .genie-lamp-section h2 {
+                font-size: 28px;
+            }
+            .categories h2 {
+                font-size: 28px;
+            }
             .nav-links {
                 gap: 15px;
+                font-size: 14px;
             }
-
-            .features h2,
-            .how-it-works h2 {
-                font-size: 32px;
+            .lamp-image {
+                max-width: 280px;
             }
-
-            .step {
-                flex-direction: column;
-                text-align: center;
+            .category-image {
+                height: 150px;
             }
         }
     </style>
@@ -279,63 +363,126 @@
             <div class="header-content">
                 <a href="#" class="logo">Wish Jinny</a>
                 <nav class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#how-it-works">How It Works</a>
+                    <a href="#video">Video</a>
+                    <a href="#genie-lamp">Rub Lamp</a>
+                    <a href="#categories">Categories</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
+    <!-- Hero Image Section (Top) -->
     <section class="hero">
         <div class="container">
-            <h1>Find the Perfect Gift in Seconds</h1>
-            <p>AI-powered gift recommendations tailored to your loved ones. Never stress about gift-giving again.</p>
-            
-            <img src="/assets/front-genie-lamp.jpg" alt="Genie Lamp" class="hero-image">
-            
-            <a href="#" class="cta-button">Get Started Free</a>
+            <img src="assets/front-genie-lamp.jpg" alt="Wish Jinny Lamp" class="hero-image">
         </div>
     </section>
 
-    <section class="features" id="features">
+    <!-- Video Section -->
+    <section class="video-section" id="video">
         <div class="container">
-            <h2>Why Choose Wish Jinny?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Personalized Recommendations</h3>
-                    <p>Our AI analyzes interests, preferences, and occasion to suggest gifts they'll actually love.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Instant Results</h3>
-                    <p>Get curated gift ideas in seconds, not hours. Save time and find something amazing.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎁</div>
-                    <h3>Unique Finds</h3>
-                    <p>Discover one-of-a-kind gifts from curated stores you won't find anywhere else.</p>
+            <h2>Watch How It Works</h2>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    🎥 Video will be added here<br>
+                    (Upload your demo video)
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="how-it-works" id="how-it-works">
+    <!-- Interactive Genie Lamp Section -->
+    <section class="genie-lamp-section" id="genie-lamp">
         <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-text">Tell us about the person and occasion</div>
+            <h2>Rub the Lamp, Get Amazing Offers!</h2>
+            <p>Click on the lamp to reveal exclusive discounts</p>
+            
+            <div class="lamp-container">
+                <img src="assets/front-genie-lamp.jpg" alt="Rub the Lamp" class="lamp-image" id="genieLamp">
+                
+                <div class="fog" id="fog"></div>
+                
+                <div class="offer-popup offer-1" id="offer1">🎉 50% OFF</div>
+                <div class="offer-popup offer-2" id="offer2">💰 Flat ₹200 Cashback</div>
+                <div class="offer-popup offer-3" id="offer3">🔥 Buy 1 Get 1 Free</div>
+                <div class="offer-popup offer-4" id="offer4">⭐ Extra 30% OFF</div>
+            </div>
+            
+            <div class="rub-instruction">
+                👆 Click on the lamp to rub it!
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section with Real Images -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=400&h=300&fit=crop" alt="Cosmetics" class="category-image">
+                    <h3>Cosmetics</h3>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-text">Our AI generates personalized gift ideas</div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="Jewelry" class="category-image">
+                    <h3>Jewelry</h3>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-text">Choose the perfect gift and make them smile</div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&h=300&fit=crop" alt="Garments" class="category-image">
+                    <h3>Garments</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Footwear" class="category-image">
+                    <h3>Footwear</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=400&h=300&fit=crop" alt="Home & Living" class="category-image">
+                    <h3>Home & Living</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Kids Toys" class="category-image">
+                    <h3>Kids Toys</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=300&fit=crop" alt="Mobile Covers" class="category-image">
+                    <h3>Mobile Covers</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Smart Watch" class="category-image">
+                    <h3>Smart Watch</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop" alt="AirBuds" class="category-image">
+                    <h3>AirBuds</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Headphones" class="category-image">
+                    <h3>Headphones</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop" alt="Teddy Bears" class="category-image">
+                    <h3>Teddy Bears</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Soft Toys" class="category-image">
+                    <h3>Soft Toys</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop" alt="Mobile Accessories" class="category-image">
+                    <h3>Mobile Accessories</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=300&fit=crop" alt="Gaming" class="category-image">
+                    <h3>Gaming</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop" alt="Books" class="category-image">
+                    <h3>Books</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop" alt="Sports" class="category-image">
+                    <h3>Sports</h3>
                 </div>
             </div>
         </div>
@@ -347,9 +494,42 @@
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Contact Us</a>
+                <a href="#">About</a>
             </div>
-            <p class="copyright">&copy; 2024 Wish Jinny. All rights reserved.</p>
+            <p class="copyright">© 2024 Wish Jinny. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const genieLamp = document.getElementById('genieLamp');
+        const fog = document.getElementById('fog');
+        const offers = [
+            document.getElementById('offer1'),
+            document.getElementById('offer2'),
+            document.getElementById('offer3'),
+            document.getElementById('offer4')
+        ];
+
+        let isAnimating = false;
+
+        genieLamp.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            fog.classList.add('active');
+
+            offers.forEach((offer, index) => {
+                setTimeout(() => {
+                    offer.classList.add('active');
+                }, index * 300);
+            });
+
+            setTimeout(() => {
+                fog.classList.remove('active');
+                offers.forEach(offer => offer.classList.remove('active'));
+                isAnimating = false;
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
