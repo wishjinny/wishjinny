@@ -17,31 +17,25 @@
             color: #2d3748;
             line-height: 1.6;
             width: 100%;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 25px 0;
+            padding: 25px 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            width: 100%;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .logo {
@@ -62,24 +56,23 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 17px;
-            transition: opacity 0.3s;
         }
 
         .nav-links a:hover {
             opacity: 0.8;
         }
 
-        /* Hero Image Section */
+        /* Hero Image */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 80px 0;
+            padding: 80px 40px;
             text-align: center;
             width: 100%;
         }
 
         .hero-image {
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             height: auto;
             margin: 0 auto;
             display: block;
@@ -95,7 +88,7 @@
         /* Video Section */
         .video-section {
             background: white;
-            padding: 80px 0;
+            padding: 80px 40px;
             text-align: center;
             width: 100%;
         }
@@ -107,10 +100,16 @@
             font-weight: 700;
         }
 
-        .video-container {
-            max-width: 900px;
-            width: 90%;
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
             margin: 0 auto;
+            width: 100%;
+        }
+
+        .video-card {
             background: #1a202c;
             border-radius: 20px;
             overflow: hidden;
@@ -119,7 +118,7 @@
 
         .video-placeholder {
             width: 100%;
-            height: 500px;
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,14 +133,18 @@
             font-size: 60px;
         }
 
-        /* Interactive Genie Lamp Section */
+        .video-card h3 {
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Genie Lamp Section */
         .genie-lamp-section {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 100px 0;
+            padding: 100px 40px;
             text-align: center;
             color: white;
-            position: relative;
-            overflow: hidden;
             width: 100%;
         }
 
@@ -161,7 +164,6 @@
         .lamp-container {
             position: relative;
             max-width: 600px;
-            width: 90%;
             margin: 0 auto;
         }
 
@@ -180,11 +182,6 @@
             transform: scale(1.05);
         }
 
-        .lamp-image:active {
-            transform: scale(0.98);
-        }
-
-        /* Fog Animation */
         .fog {
             position: absolute;
             top: -100px;
@@ -196,7 +193,6 @@
             border-radius: 50%;
             opacity: 0;
             pointer-events: none;
-            animation: none;
         }
 
         .fog.active {
@@ -204,20 +200,11 @@
         }
 
         @keyframes fogRise {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(0) scale(0.5);
-            }
-            50% {
-                opacity: 0.7;
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-200px) scale(1.5);
-            }
+            0% { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.5); }
+            50% { opacity: 0.7; }
+            100% { opacity: 0; transform: translateX(-50%) translateY(-200px) scale(1.5); }
         }
 
-        /* Offer Popups */
         .offer-popup {
             position: absolute;
             background: white;
@@ -229,7 +216,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             opacity: 0;
             pointer-events: none;
-            animation: none;
             white-space: nowrap;
         }
 
@@ -238,21 +224,10 @@
         }
 
         @keyframes popupFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(0) scale(0.8);
-            }
-            20% {
-                opacity: 1;
-                transform: translateY(-20px) scale(1);
-            }
-            80% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) scale(1.1);
-            }
+            0% { opacity: 0; transform: translateY(0) scale(0.8); }
+            20% { opacity: 1; transform: translateY(-20px) scale(1); }
+            80% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-100px) scale(1.1); }
         }
 
         .offer-1 { top: 10%; left: 10%; background: #fed7e2; }
@@ -274,7 +249,7 @@
         /* Categories Section */
         .categories {
             background: #f7fafc;
-            padding: 80px 0;
+            padding: 80px 40px;
             width: 100%;
         }
 
@@ -290,6 +265,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
             width: 100%;
         }
 
@@ -333,7 +310,7 @@
         footer {
             background: #2d3748;
             color: white;
-            padding: 50px 0;
+            padding: 50px 40px;
             text-align: center;
             width: 100%;
         }
@@ -349,7 +326,6 @@
         .footer-links a {
             color: #a0aec0;
             text-decoration: none;
-            transition: color 0.3s;
             font-size: 16px;
         }
 
@@ -362,182 +338,139 @@
             font-size: 15px;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
+            header, .hero, .video-section, .genie-lamp-section, .categories, footer {
+                padding-left: 20px;
+                padding-right: 20px;
             }
-            .hero-image {
-                max-width: 350px;
-            }
-            .video-placeholder {
-                height: 280px;
-            }
-            .genie-lamp-section h2 {
-                font-size: 32px;
-            }
-            .categories h2 {
-                font-size: 32px;
-            }
-            .nav-links {
-                gap: 20px;
-                font-size: 15px;
-            }
-            .lamp-image {
-                max-width: 300px;
-            }
-            .category-image {
-                height: 170px;
-            }
-            .categories-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 20px;
-            }
+            .hero-image { max-width: 350px; }
+            .video-placeholder { height: 200px; }
+            .lamp-image { max-width: 300px; }
+            .categories-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Wish Jinny</a>
-                <nav class="nav-links">
-                    <a href="#video">Video</a>
-                    <a href="#genie-lamp">Rub Lamp</a>
-                    <a href="#categories">Categories</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
+        <div class="header-content">
+            <a href="#" class="logo">Wish Jinny</a>
+            <nav class="nav-links">
+                <a href="#video">Video</a>
+                <a href="#genie-lamp">Rub Lamp</a>
+                <a href="#categories">Categories</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Image Section (Top) -->
     <section class="hero">
-        <div class="container">
-            <img src="assets/front-genie-lamp.jpg" alt="Wish Jinny Lamp" class="hero-image">
-        </div>
+        <img src="assets/front-genie-lamp.jpg" alt="Wish Jinny Lamp" class="hero-image">
     </section>
 
-    <!-- Video Section -->
     <section class="video-section" id="video">
-        <div class="container">
-            <h2>Watch How It Works</h2>
-            <div class="video-container">
+        <h2>Watch How It Works</h2>
+        <div class="video-grid">
+            <div class="video-card">
                 <div class="video-placeholder">
                     <span>🎥</span>
-                    <div>Video will be added here</div>
-                    <div style="font-size: 16px; opacity: 0.8;">(Upload your demo video)</div>
+                    <div>Demo Video 1</div>
                 </div>
+                <h3>How to Use Wish Jinny</h3>
+            </div>
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>🎥</span>
+                    <div>Demo Video 2</div>
+                </div>
+                <h3>Product Showcase</h3>
+            </div>
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>🎥</span>
+                    <div>Demo Video 3</div>
+                </div>
+                <h3>Customer Reviews</h3>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Genie Lamp Section -->
     <section class="genie-lamp-section" id="genie-lamp">
-        <div class="container">
-            <h2>Rub the Lamp, Get Amazing Offers!</h2>
-            <p>Click on the lamp to reveal exclusive discounts</p>
-            
-            <div class="lamp-container">
-                <img src="assets/front-genie-lamp.jpg" alt="Rub the Lamp" class="lamp-image" id="genieLamp">
-                
-                <div class="fog" id="fog"></div>
-                
-                <div class="offer-popup offer-1" id="offer1">🎉 50% OFF</div>
-                <div class="offer-popup offer-2" id="offer2">💰 Flat ₹200 Cashback</div>
-                <div class="offer-popup offer-3" id="offer3">🔥 Buy 1 Get 1 Free</div>
-                <div class="offer-popup offer-4" id="offer4">⭐ Extra 30% OFF</div>
-            </div>
-            
-            <div class="rub-instruction">
-                👆 Click on the lamp to rub it!
-            </div>
+        <h2>Rub the Lamp, Get Amazing Offers!</h2>
+        <p>Click on the lamp to reveal exclusive discounts</p>
+        
+        <div class="lamp-container">
+            <img src="assets/front-genie-lamp.jpg" alt="Rub the Lamp" class="lamp-image" id="genieLamp">
+            <div class="fog" id="fog"></div>
+            <div class="offer-popup offer-1" id="offer1">🎉 50% OFF</div>
+            <div class="offer-popup offer-2" id="offer2">💰 Flat ₹200 Cashback</div>
+            <div class="offer-popup offer-3" id="offer3">🔥 Buy 1 Get 1 Free</div>
+            <div class="offer-popup offer-4" id="offer4">⭐ Extra 30% OFF</div>
         </div>
+        
+        <div class="rub-instruction">👆 Click on the lamp to rub it!</div>
     </section>
 
-    <!-- Categories Section with Real Images -->
     <section class="categories" id="categories">
-        <div class="container">
-            <h2>Shop by Category</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=400&h=300&fit=crop" alt="Cosmetics" class="category-image">
-                    <h3>Cosmetics</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="Jewelry" class="category-image">
-                    <h3>Jewelry</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&h=300&fit=crop" alt="Garments" class="category-image">
-                    <h3>Garments</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Footwear" class="category-image">
-                    <h3>Footwear</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=400&h=300&fit=crop" alt="Home & Living" class="category-image">
-                    <h3>Home & Living</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Kids Toys" class="category-image">
-                    <h3>Kids Toys</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=300&fit=crop" alt="Mobile Covers" class="category-image">
-                    <h3>Mobile Covers</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Smart Watch" class="category-image">
-                    <h3>Smart Watch</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop" alt="AirBuds" class="category-image">
-                    <h3>AirBuds</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Headphones" class="category-image">
-                    <h3>Headphones</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop" alt="Teddy Bears" class="category-image">
-                    <h3>Teddy Bears</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Soft Toys" class="category-image">
-                    <h3>Soft Toys</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop" alt="Mobile Accessories" class="category-image">
-                    <h3>Mobile Accessories</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=300&fit=crop" alt="Gaming" class="category-image">
-                    <h3>Gaming</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop" alt="Books" class="category-image">
-                    <h3>Books</h3>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop" alt="Sports" class="category-image">
-                    <h3>Sports</h3>
-                </div>
+        <h2>Shop by Category</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=400&h=300&fit=crop" alt="Cosmetics" class="category-image">
+                <h3>Cosmetics</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="Jewelry" class="category-image">
+                <h3>Jewelry</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&h=300&fit=crop" alt="Garments" class="category-image">
+                <h3>Garments</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Footwear" class="category-image">
+                <h3>Footwear</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=400&h=300&fit=crop" alt="Home & Living" class="category-image">
+                <h3>Home & Living</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Kids Toys" class="category-image">
+                <h3>Kids Toys</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=300&fit=crop" alt="Mobile Covers" class="category-image">
+                <h3>Mobile Covers</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Smart Watch" class="category-image">
+                <h3>Smart Watch</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop" alt="AirBuds" class="category-image">
+                <h3>AirBuds</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Headphones" class="category-image">
+                <h3>Headphones</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop" alt="Teddy Bears" class="category-image">
+                <h3>Teddy Bears</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Soft Toys" class="category-image">
+                <h3>Soft Toys</h3>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-                <a href="#">About</a>
-            </div>
-            <p class="copyright">© 2024 Wish Jinny. All rights reserved.</p>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About</a>
         </div>
+        <p class="copyright">© 2024 Wish Jinny. All rights reserved.</p>
     </footer>
 
     <script>
@@ -549,21 +482,15 @@
             document.getElementById('offer3'),
             document.getElementById('offer4')
         ];
-
         let isAnimating = false;
 
         genieLamp.addEventListener('click', () => {
             if (isAnimating) return;
             isAnimating = true;
-
             fog.classList.add('active');
-
             offers.forEach((offer, index) => {
-                setTimeout(() => {
-                    offer.classList.add('active');
-                }, index * 300);
+                setTimeout(() => offer.classList.add('active'), index * 300);
             });
-
             setTimeout(() => {
                 fog.classList.remove('active');
                 offers.forEach(offer => offer.classList.remove('active'));
