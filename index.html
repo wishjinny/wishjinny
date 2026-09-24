@@ -19,7 +19,6 @@
             width: 100%;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 25px 40px;
@@ -34,7 +33,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
@@ -43,7 +42,6 @@
             font-weight: 800;
             color: white;
             text-decoration: none;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .nav-links {
@@ -58,11 +56,6 @@
             font-size: 17px;
         }
 
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Image */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 80px 40px;
@@ -85,7 +78,6 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Video Section */
         .video-section {
             background: white;
             padding: 80px 40px;
@@ -106,7 +98,6 @@
             gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
-            width: 100%;
         }
 
         .video-card {
@@ -139,7 +130,6 @@
             font-size: 18px;
         }
 
-        /* Genie Lamp Section */
         .genie-lamp-section {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             padding: 100px 40px;
@@ -246,7 +236,6 @@
             font-weight: 600;
         }
 
-        /* Categories Section */
         .categories {
             background: #f7fafc;
             padding: 80px 40px;
@@ -263,40 +252,40 @@
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 25px;
+            max-width: 1600px;
             margin: 0 auto;
             width: 100%;
         }
 
         .category-card {
             background: white;
-            border-radius: 18px;
+            border-radius: 50%;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            height: 100%;
+            aspect-ratio: 1;
             display: flex;
             flex-direction: column;
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.05);
             box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
 
         .category-image {
             width: 100%;
-            height: 200px;
+            height: 70%;
             object-fit: cover;
             display: block;
         }
 
         .category-card h3 {
-            padding: 22px;
-            font-size: 19px;
+            padding: 15px;
+            font-size: 16px;
             color: #2d3748;
             font-weight: 600;
             text-align: center;
@@ -306,7 +295,6 @@
             justify-content: center;
         }
 
-        /* Footer */
         footer {
             background: #2d3748;
             color: white;
@@ -338,15 +326,19 @@
             font-size: 15px;
         }
 
+        @media (max-width: 1200px) {
+            .categories-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            header, .hero, .video-section, .genie-lamp-section, .categories, footer {
-                padding-left: 20px;
-                padding-right: 20px;
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             .hero-image { max-width: 350px; }
             .video-placeholder { height: 200px; }
             .lamp-image { max-width: 300px; }
-            .categories-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
         }
     </style>
 </head>
@@ -363,7 +355,7 @@
     </header>
 
     <section class="hero">
-        <img src="assets/front-genie-lamp.jpg" alt="Wish Jinny Lamp" class="hero-image">
+        <img src="assets/pfront-genie-lamp.png" alt="Wish Jinny Lamp" class="hero-image">
     </section>
 
     <section class="video-section" id="video">
@@ -398,7 +390,7 @@
         <p>Click on the lamp to reveal exclusive discounts</p>
         
         <div class="lamp-container">
-            <img src="assets/front-genie-lamp.jpg" alt="Rub the Lamp" class="lamp-image" id="genieLamp">
+            <img src="assets/pfront-genie-lamp.png" alt="Rub the Lamp" class="lamp-image" id="genieLamp">
             <div class="fog" id="fog"></div>
             <div class="offer-popup offer-1" id="offer1">🎉 50% OFF</div>
             <div class="offer-popup offer-2" id="offer2">💰 Flat ₹200 Cashback</div>
@@ -413,51 +405,51 @@
         <h2>Shop by Category</h2>
         <div class="categories-grid">
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=400&h=300&fit=crop" alt="Cosmetics" class="category-image">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=400&h=400&fit=crop" alt="Cosmetics" class="category-image">
                 <h3>Cosmetics</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop" alt="Jewelry" class="category-image">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop" alt="Jewelry" class="category-image">
                 <h3>Jewelry</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&h=300&fit=crop" alt="Garments" class="category-image">
+                <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&h=400&fit=crop" alt="Garments" class="category-image">
                 <h3>Garments</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Footwear" class="category-image">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop" alt="Footwear" class="category-image">
                 <h3>Footwear</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=400&h=300&fit=crop" alt="Home & Living" class="category-image">
+                <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=400&h=400&fit=crop" alt="Home & Living" class="category-image">
                 <h3>Home & Living</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Kids Toys" class="category-image">
+                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=400&fit=crop" alt="Kids Toys" class="category-image">
                 <h3>Kids Toys</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=300&fit=crop" alt="Mobile Covers" class="category-image">
+                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Mobile Covers" class="category-image">
                 <h3>Mobile Covers</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Smart Watch" class="category-image">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Smart Watch" class="category-image">
                 <h3>Smart Watch</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop" alt="AirBuds" class="category-image">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=400&fit=crop" alt="AirBuds" class="category-image">
                 <h3>AirBuds</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Headphones" class="category-image">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Headphones" class="category-image">
                 <h3>Headphones</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop" alt="Teddy Bears" class="category-image">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop" alt="Teddy Bears" class="category-image">
                 <h3>Teddy Bears</h3>
             </div>
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=300&fit=crop" alt="Soft Toys" class="category-image">
+                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=400&fit=crop" alt="Soft Toys" class="category-image">
                 <h3>Soft Toys</h3>
             </div>
         </div>
