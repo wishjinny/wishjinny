@@ -16,18 +16,21 @@
             background: #f7fafc;
             color: #2d3748;
             line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px 0;
+            padding: 25px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -38,10 +41,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 800;
             color: white;
             text-decoration: none;
@@ -50,14 +54,14 @@
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 17px;
             transition: opacity 0.3s;
         }
 
@@ -68,13 +72,14 @@
         /* Hero Image Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            width: 100%;
         }
 
         .hero-image {
-            max-width: 450px;
-            width: 100%;
+            max-width: 500px;
+            width: 90%;
             height: auto;
             margin: 0 auto;
             display: block;
@@ -90,71 +95,85 @@
         /* Video Section */
         .video-section {
             background: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            width: 100%;
         }
 
         .video-section h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
+            font-size: 40px;
+            margin-bottom: 40px;
             color: #2d3748;
+            font-weight: 700;
         }
 
         .video-container {
-            max-width: 800px;
+            max-width: 900px;
+            width: 90%;
             margin: 0 auto;
-            background: #000;
-            border-radius: 15px;
+            background: #1a202c;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
         }
 
         .video-placeholder {
             width: 100%;
-            height: 450px;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
             color: white;
-            font-size: 18px;
+            font-size: 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .video-placeholder span {
+            font-size: 60px;
         }
 
         /* Interactive Genie Lamp Section */
         .genie-lamp-section {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
             color: white;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .genie-lamp-section h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 46px;
+            margin-bottom: 25px;
             text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            font-weight: 800;
         }
 
         .genie-lamp-section p {
-            font-size: 20px;
-            margin-bottom: 40px;
+            font-size: 22px;
+            margin-bottom: 50px;
             opacity: 0.95;
         }
 
         .lamp-container {
             position: relative;
-            max-width: 500px;
+            max-width: 600px;
+            width: 90%;
             margin: 0 auto;
         }
 
         .lamp-image {
-            max-width: 350px;
+            max-width: 400px;
             width: 100%;
             height: auto;
             cursor: pointer;
             transition: transform 0.3s;
             filter: drop-shadow(0 15px 35px rgba(0,0,0,0.4));
+            display: block;
+            margin: 0 auto;
         }
 
         .lamp-image:hover {
@@ -203,14 +222,15 @@
             position: absolute;
             background: white;
             color: #2d3748;
-            padding: 15px 25px;
-            border-radius: 10px;
+            padding: 18px 30px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 18px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             opacity: 0;
             pointer-events: none;
             animation: none;
+            white-space: nowrap;
         }
 
         .offer-popup.active {
@@ -235,83 +255,94 @@
             }
         }
 
-        .offer-1 { top: 20%; left: 20%; background: #fed7e2; }
-        .offer-2 { top: 15%; right: 25%; background: #c6f6d5; }
-        .offer-3 { bottom: 30%; left: 30%; background: #feebc8; }
-        .offer-4 { bottom: 25%; right: 20%; background: #bee3f8; }
+        .offer-1 { top: 10%; left: 10%; background: #fed7e2; }
+        .offer-2 { top: 5%; right: 10%; background: #c6f6d5; }
+        .offer-3 { bottom: 25%; left: 15%; background: #feebc8; }
+        .offer-4 { bottom: 20%; right: 10%; background: #bee3f8; }
 
         .rub-instruction {
-            margin-top: 30px;
-            font-size: 18px;
+            margin-top: 40px;
+            font-size: 20px;
             opacity: 0.9;
             background: rgba(255,255,255,0.2);
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 50px;
             display: inline-block;
+            font-weight: 600;
         }
 
         /* Categories Section */
         .categories {
             background: #f7fafc;
-            padding: 60px 0;
+            padding: 80px 0;
+            width: 100%;
         }
 
         .categories h2 {
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
+            font-size: 42px;
+            margin-bottom: 60px;
             color: #2d3748;
+            font-weight: 700;
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+            width: 100%;
         }
 
         .category-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 18px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
 
         .category-image {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
+            display: block;
         }
 
         .category-card h3 {
-            padding: 20px;
-            font-size: 18px;
+            padding: 22px;
+            font-size: 19px;
             color: #2d3748;
             font-weight: 600;
             text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Footer */
         footer {
             background: #2d3748;
             color: white;
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
+            width: 100%;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
+            gap: 35px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
@@ -319,6 +350,7 @@
             color: #a0aec0;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 16px;
         }
 
         .footer-links a:hover {
@@ -327,32 +359,39 @@
 
         .copyright {
             color: #718096;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
             .hero-image {
                 max-width: 350px;
             }
             .video-placeholder {
-                height: 250px;
+                height: 280px;
             }
             .genie-lamp-section h2 {
-                font-size: 28px;
+                font-size: 32px;
             }
             .categories h2 {
-                font-size: 28px;
+                font-size: 32px;
             }
             .nav-links {
-                gap: 15px;
-                font-size: 14px;
+                gap: 20px;
+                font-size: 15px;
             }
             .lamp-image {
-                max-width: 280px;
+                max-width: 300px;
             }
             .category-image {
-                height: 150px;
+                height: 170px;
+            }
+            .categories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 20px;
             }
         }
     </style>
@@ -385,8 +424,9 @@
             <h2>Watch How It Works</h2>
             <div class="video-container">
                 <div class="video-placeholder">
-                    🎥 Video will be added here<br>
-                    (Upload your demo video)
+                    <span>🎥</span>
+                    <div>Video will be added here</div>
+                    <div style="font-size: 16px; opacity: 0.8;">(Upload your demo video)</div>
                 </div>
             </div>
         </div>
@@ -437,7 +477,7 @@
                     <h3>Footwear</h3>
                 </div>
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=400&h=300&fit=crop" alt="Home & Living" class="category-image">
+                    <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=400&h=300&fit=crop" alt="Home & Living" class="category-image">
                     <h3>Home & Living</h3>
                 </div>
                 <div class="category-card">
