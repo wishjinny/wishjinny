@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Wish Jinny — A magical marketplace coming soon."
+  />
+  <title>Wish Jinny | Coming Soon</title>
+
+  <style>
+    :root {
+      --midnight: #06143b;
+      --royal-blue: #153f8c;
+      --purple: #6e36bb;
+      --gold: #e4b84a;
+      --cream: #fff8e8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 12% 15%, rgba(88, 57, 189, 0.72), transparent 32%),
+        radial-gradient(circle at 88% 82%, rgba(225, 175, 52, 0.25), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(11, 71, 157, 0.62), transparent 45%),
+        var(--midnight);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .stars,
+    .stars::before,
+    .stars::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255, 244, 192, 0.95) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255, 244, 192, 0.7) 1px, transparent 1.5px);
+      background-size: 96px 96px, 157px 157px;
+      background-position: 8px 20px, 46px 70px;
+      opacity: 0.45;
+    }
+
+    .stars::before {
+      transform: rotate(12deg) scale(1.2);
+      opacity: 0.22;
+    }
+
+    .stars::after {
+      transform: rotate(-8deg) scale(1.4);
+      opacity: 0.15;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: min(92%, 760px);
+      margin: 24px;
+      padding: clamp(40px, 8vw, 80px) 32px;
+      text-align: center;
+      border: 1px solid rgba(246, 212, 124, 0.5);
+      border-radius: 28px;
+      background: rgba(7, 22, 61, 0.5);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+    }
+
+    .lamp {
+      display: inline-grid;
+      width: 72px;
+      height: 72px;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffec9b 0%, #d89d25 44%, #704008 100%);
+      box-shadow: 0 0 42px rgba(244, 195, 75, 0.82);
+      color: #311600;
+      font-size: 2.8rem;
+    }
+
+    .brand {
+      margin: 0;
+      color: var(--gold);
+      font-size: clamp(3rem, 10vw, 6.4rem);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.45);
+    }
+
+    .line {
+      max-width: 620px;
+      margin: 18px auto 10px;
+      color: #fff7dd;
+      font-size: clamp(1.45rem, 4vw, 2.45rem);
+      line-height: 1.25;
+    }
+
+    .tagline {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 24px;
+      border: 1px solid rgba(255, 231, 153, 0.78);
+      border-radius: 999px;
+      color: #fff7dd;
+      background: linear-gradient(135deg, #7f43d1, #3e1f86);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42);
+    }
+
+    .small {
+      display: block;
+      margin-top: 26px;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+
+  <main class="card">
+    <div class="lamp" aria-hidden="true">🪔</div>
+
+    <h1 class="brand">Wish Jinny</h1>
+
+    <p class="line">Jinny Will Fulfill<br />Your Every Wish</p>
+
+    <p class="tagline">
+      A magical multi-vendor marketplace for beauty, fashion,
+      jewellery, electronics and everyday essentials.
+    </p>
+
+    <a class="button" href="mailto:hello@wishjinny.com">
+      Enter the Magical Marketplace
+    </a>
+
+    <span class="small">Your Wish. Our Marketplace. Coming Soon.</span>
+  </main>
+</body>
+</html>
