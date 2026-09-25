@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* Top full-screen banner image */
         .banner-image {
             width: 100%;
             margin: 0;
@@ -41,7 +40,6 @@
             padding: 0;
         }
 
-        /* Navigation */
         header {
             position: sticky;
             top: 0;
@@ -83,7 +81,6 @@
             color: #ffe590;
         }
 
-        /* Welcome section */
         .hero {
             padding: 75px 25px;
             text-align: center;
@@ -103,534 +100,314 @@
             opacity: 0.96;
         }
 
-        /* Video section */
+        /* Only one uploaded video */
         .video-section {
-            padding: 80px 35px;
+            padding: 80px 25px;
             text-align: center;
             background: #ffffff;
         }
 
         .section-title {
-            margin-bottom: 42px;
+            margin-bottom: 36px;
             color: #2d3748;
             font-size: 42px;
         }
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 30px;
-            max-width: 1400px;
+        .single-video-card {
+            max-width: 1100px;
             margin: 0 auto;
-        }
-
-        .video-card {
             overflow: hidden;
-            border-radius: 22px;
-            background: #1a202c;
-            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+            border-radius: 24px;
+            background: #17112f;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
         }
 
-        .video-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            height: 245px;
-            color: #ffffff;
-            font-size: 19px;
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        .single-video-card video {
+            display: block;
+            width: 100%;
+            max-height: 620px;
+            background: #000000;
         }
 
-        .video-placeholder span {
-            font-size: 58px;
-        }
-
-        .video-card h3 {
+        .single-video-card h3 {
             padding: 20px;
             color: #ffffff;
-            font-size: 18px;
+            font-size: 20px;
         }
 
-        /* Discount poster */
-        .discount-section {
-            padding: 75px 25px;
+        /* Auto product slideshow */
+        .product-slider-section {
+            padding: 85px 0;
+            text-align: center;
             background: #f7fafc;
         }
 
-        .discount-poster {
+        .product-slider-section h2 {
+            margin: 0 20px 18px;
+            color: #2d3748;
+            font-size: 44px;
+        }
+
+        .product-slider-section > p {
+            margin: 0 20px 40px;
+            color: #4a5568;
+            font-size: 20px;
+        }
+
+        .slider {
             position: relative;
-            max-width: 1400px;
-            min-height: 410px;
-            margin: 0 auto;
+            width: 100%;
+            min-height: 520px;
             overflow: hidden;
+            background: #2a174f;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            border-radius: 30px;
-            background:
-                radial-gradient(circle at 15% 18%, rgba(255, 238, 140, 0.38), transparent 23%),
-                radial-gradient(circle at 84% 75%, rgba(255, 255, 255, 0.19), transparent 26%),
-                linear-gradient(135deg, #5420a8 0%, #9d3dd6 48%, #f5576c 100%);
-            box-shadow: 0 20px 42px rgba(91, 40, 137, 0.34);
+            opacity: 0;
+            animation: sliderFade 24s infinite;
+            background-size: cover;
+            background-position: center;
         }
 
-        .discount-poster::before {
-            content: "✦  ✧  ✦  ✧  ✦  ✧  ✦";
+        .slide::before {
+            content: "";
             position: absolute;
-            top: 25px;
-            left: 0;
-            width: 100%;
-            color: rgba(255, 255, 255, 0.72);
-            font-size: 30px;
-            letter-spacing: 15px;
-            animation: sparkleMove 5s linear infinite;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(15, 8, 40, 0.76) 0%,
+                rgba(35, 15, 70, 0.46) 45%,
+                rgba(30, 11, 55, 0.18) 100%
+            );
         }
 
-        .discount-content {
+        .slide-content {
             position: relative;
             z-index: 2;
-            padding: 45px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 65px 80px;
+            text-align: left;
+            color: #ffffff;
         }
 
-        .discount-tag {
+        .slide-content span {
             display: inline-block;
-            margin-bottom: 15px;
-            padding: 8px 18px;
-            border-radius: 30px;
-            color: #5623a8;
-            background: #fff2a9;
-            font-size: 15px;
+            margin-bottom: 16px;
+            padding: 8px 17px;
+            border-radius: 50px;
+            color: #4b217f;
+            background: #fff0a8;
+            font-size: 14px;
             font-weight: 800;
             letter-spacing: 1px;
         }
 
-        .discount-content h2 {
-            font-size: 78px;
-            line-height: 1;
-            color: #fff3ae;
-            text-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+        .slide-content h3 {
+            max-width: 650px;
+            margin-bottom: 12px;
+            font-size: 58px;
+            line-height: 1.05;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
         }
 
-        .discount-content h3 {
-            margin-top: 12px;
-            font-size: 34px;
+        .slide-content p {
+            max-width: 570px;
+            font-size: 21px;
         }
 
-        .discount-content p {
-            margin-top: 12px;
-            font-size: 20px;
+        .slide-1 {
+            animation-delay: 0s;
+            background-image: url("https://images.unsplash.com/photo-1596462502278-27bfdd403348?auto=format&fit=crop&w=1800&q=90");
         }
 
-        .shop-now-button {
-            display: inline-block;
-            margin-top: 24px;
-            padding: 14px 30px;
-            border-radius: 50px;
-            color: #5720a7;
-            background: #ffffff;
-            font-size: 16px;
-            font-weight: 800;
-            text-decoration: none;
-            transition: transform 0.25s ease;
+        .slide-2 {
+            animation-delay: 4s;
+            background-image: url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=90");
         }
 
-        .shop-now-button:hover {
-            transform: scale(1.06);
+        .slide-3 {
+            animation-delay: 8s;
+            background-image: url("https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1800&q=90");
         }
 
-        @keyframes sparkleMove {
+        .slide-4 {
+            animation-delay: 12s;
+            background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1800&q=90");
+        }
+
+        .slide-5 {
+            animation-delay: 16s;
+            background-image: url("https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=90");
+        }
+
+        .slide-6 {
+            animation-delay: 20s;
+            background-image: url("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1800&q=90");
+        }
+
+        @keyframes sliderFade {
             0% {
-                transform: translateX(-12px);
-                opacity: 0.48;
+                opacity: 0;
+                transform: scale(1);
             }
 
-            50% {
+            4% {
                 opacity: 1;
             }
 
+            15% {
+                opacity: 1;
+            }
+
+            20% {
+                opacity: 0;
+                transform: scale(1.07);
+            }
+
             100% {
-                transform: translateX(12px);
-                opacity: 0.48;
+                opacity: 0;
             }
         }
 
-        /* Full-screen magic animation: no diya / no Diwali lamp */
-        .magic-animation-section {
-            position: relative;
-            min-height: 720px;
-            overflow: hidden;
+        .slider-dots {
+            position: absolute;
+            z-index: 10;
+            bottom: 24px;
+            left: 50%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 90px 25px;
-            text-align: center;
-            color: #ffffff;
-            background:
-                radial-gradient(circle at 50% 45%, rgba(126, 91, 255, 0.48), transparent 22%),
-                radial-gradient(circle at 18% 20%, rgba(96, 214, 255, 0.2), transparent 18%),
-                radial-gradient(circle at 85% 76%, rgba(255, 119, 209, 0.18), transparent 21%),
-                linear-gradient(135deg, #08051e 0%, #24124c 48%, #4b197c 100%);
-        }
-
-        .magic-animation-section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            opacity: 0.65;
-            background-image:
-                radial-gradient(circle, rgba(255, 255, 255, 0.95) 1.5px, transparent 2px),
-                radial-gradient(circle, rgba(255, 239, 153, 0.85) 1px, transparent 2px),
-                radial-gradient(circle, rgba(170, 219, 255, 0.8) 1px, transparent 2px);
-            background-size: 110px 110px, 170px 170px, 230px 230px;
-            background-position: 10px 20px, 60px 80px, 130px 35px;
-            animation: starDrift 18s linear infinite;
-        }
-
-        .magic-animation-section::after {
-            content: "";
-            position: absolute;
-            left: -20%;
-            bottom: -35%;
-            width: 140%;
-            height: 65%;
-            opacity: 0.52;
-            filter: blur(45px);
-            background:
-                radial-gradient(ellipse at 25% 55%, rgba(153, 127, 255, 0.72), transparent 35%),
-                radial-gradient(ellipse at 58% 45%, rgba(215, 116, 255, 0.6), transparent 35%),
-                radial-gradient(ellipse at 85% 62%, rgba(125, 215, 255, 0.5), transparent 34%);
-            animation: fogDrift 12s ease-in-out infinite alternate;
-        }
-
-        .magic-content {
-            position: relative;
-            z-index: 5;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .magic-content h2 {
-            margin-bottom: 12px;
-            font-size: 52px;
-            line-height: 1.15;
-            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.42);
-        }
-
-        .magic-content > p {
-            margin-bottom: 28px;
-            font-size: 21px;
-            opacity: 0.96;
-        }
-
-        .magic-stage {
-            position: relative;
-            min-height: 440px;
-            margin: 0 auto;
-        }
-
-        .magic-lamp-large {
-            position: absolute;
-            z-index: 4;
-            left: 50%;
-            bottom: 15px;
-            width: min(740px, 88vw);
+            gap: 10px;
             transform: translateX(-50%);
-            filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.48));
-            animation: magicLampFloat 4s ease-in-out infinite;
         }
 
-        .smoke {
-            position: absolute;
-            z-index: 2;
-            left: 50%;
-            bottom: 145px;
-            width: 260px;
-            height: 260px;
+        .slider-dots span {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            pointer-events: none;
-            transform: translateX(-50%);
-            filter: blur(12px);
-            background:
-                radial-gradient(circle at 48% 60%, rgba(255, 255, 255, 0.82), transparent 22%),
-                radial-gradient(circle at 35% 48%, rgba(177, 229, 255, 0.68), transparent 30%),
-                radial-gradient(circle at 66% 38%, rgba(207, 150, 255, 0.6), transparent 31%),
-                radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.4), transparent 40%);
-            animation: smokeRiseOne 5s ease-in-out infinite;
+            background: rgba(255, 255, 255, 0.58);
+            animation: dotActive 24s infinite;
         }
 
-        .smoke-two {
-            position: absolute;
-            z-index: 2;
-            left: 50%;
-            bottom: 130px;
-            width: 210px;
-            height: 250px;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translateX(-50%);
-            filter: blur(16px);
-            background:
-                radial-gradient(circle at 38% 58%, rgba(237, 242, 255, 0.7), transparent 25%),
-                radial-gradient(circle at 60% 45%, rgba(157, 224, 255, 0.58), transparent 33%),
-                radial-gradient(circle at 48% 20%, rgba(238, 186, 255, 0.52), transparent 40%);
-            animation: smokeRiseTwo 6.2s ease-in-out infinite;
-        }
-
-        .smoke-three {
-            position: absolute;
-            z-index: 2;
-            left: 50%;
-            bottom: 125px;
-            width: 280px;
-            height: 260px;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translateX(-50%);
-            filter: blur(19px);
-            background:
-                radial-gradient(circle at 57% 58%, rgba(255, 255, 255, 0.55), transparent 27%),
-                radial-gradient(circle at 38% 40%, rgba(177, 150, 255, 0.58), transparent 37%),
-                radial-gradient(circle at 63% 18%, rgba(160, 233, 255, 0.45), transparent 42%);
-            animation: smokeRiseThree 7.1s ease-in-out infinite;
-        }
-
-        .magic-orb {
-            position: absolute;
-            z-index: 3;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #fff7b3;
-            box-shadow: 0 0 12px #fff7b3, 0 0 25px #a8dfff;
-            animation: orbFloat 4.5s ease-in-out infinite;
-        }
-
-        .orb-one {
-            left: 22%;
-            bottom: 32%;
+        .slider-dots span:nth-child(1) {
             animation-delay: 0s;
         }
 
-        .orb-two {
-            left: 33%;
-            bottom: 56%;
-            width: 11px;
-            height: 11px;
-            animation-delay: 1.2s;
+        .slider-dots span:nth-child(2) {
+            animation-delay: 4s;
         }
 
-        .orb-three {
-            right: 29%;
-            bottom: 41%;
-            width: 13px;
-            height: 13px;
-            animation-delay: 2.1s;
+        .slider-dots span:nth-child(3) {
+            animation-delay: 8s;
         }
 
-        .orb-four {
-            right: 18%;
-            bottom: 64%;
-            width: 9px;
-            height: 9px;
-            animation-delay: 0.6s;
+        .slider-dots span:nth-child(4) {
+            animation-delay: 12s;
         }
 
-        .magic-note {
-            position: relative;
-            z-index: 6;
-            display: inline-block;
-            margin-top: 4px;
-            padding: 13px 24px;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.12);
-            font-size: 17px;
-            backdrop-filter: blur(8px);
+        .slider-dots span:nth-child(5) {
+            animation-delay: 16s;
         }
 
-        @keyframes starDrift {
-            0% {
-                transform: translateY(0);
+        .slider-dots span:nth-child(6) {
+            animation-delay: 20s;
+        }
+
+        @keyframes dotActive {
+            0%, 16% {
+                background: #ffffff;
+                transform: scale(1.35);
             }
 
-            100% {
-                transform: translateY(-85px);
+            20%, 100% {
+                background: rgba(255, 255, 255, 0.55);
+                transform: scale(1);
             }
         }
 
-        @keyframes fogDrift {
-            0% {
-                transform: translateX(-5%) scale(0.95);
-            }
-
-            100% {
-                transform: translateX(7%) scale(1.12);
-            }
-        }
-
-        @keyframes magicLampFloat {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0) scale(1);
-            }
-
-            50% {
-                transform: translateX(-50%) translateY(-18px) scale(1.025);
-            }
-        }
-
-        @keyframes smokeRiseOne {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(20px) scale(0.55);
-            }
-
-            22% {
-                opacity: 0.82;
-            }
-
-            65% {
-                opacity: 0.55;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(calc(-50% - 75px)) translateY(-310px) scale(1.85);
-            }
-        }
-
-        @keyframes smokeRiseTwo {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(30px) scale(0.5);
-            }
-
-            24% {
-                opacity: 0.65;
-            }
-
-            68% {
-                opacity: 0.46;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(calc(-50% + 92px)) translateY(-350px) scale(1.9);
-            }
-        }
-
-        @keyframes smokeRiseThree {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) translateY(18px) scale(0.48);
-            }
-
-            26% {
-                opacity: 0.54;
-            }
-
-            70% {
-                opacity: 0.32;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateX(calc(-50% - 12px)) translateY(-400px) scale(2.05);
-            }
-        }
-
-        @keyframes orbFloat {
-            0%, 100% {
-                opacity: 0.2;
-                transform: translateY(0) scale(0.8);
-            }
-
-            50% {
-                opacity: 1;
-                transform: translateY(-120px) scale(1.35);
-            }
-        }
-
-        /* Actual single clickable lamp - enlarged */
+        /* Single huge Rub Lamp section */
         .genie-lamp-section {
-            padding: 105px 20px;
+            padding: 100px 0 80px;
             text-align: center;
             color: #ffffff;
             background: linear-gradient(135deg, #e94f9a 0%, #b03ac7 48%, #6337c8 100%);
         }
 
         .genie-lamp-section h2 {
-            margin-bottom: 16px;
-            font-size: 48px;
-            line-height: 1.2;
-            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+            margin: 0 20px 16px;
+            font-size: 50px;
+            line-height: 1.18;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.28);
         }
 
-        .genie-lamp-section p {
-            margin-bottom: 45px;
+        .genie-lamp-section > p {
+            margin: 0 20px 42px;
             font-size: 21px;
         }
 
         .lamp-container {
             position: relative;
             width: 100%;
-            max-width: 1500px;
-            min-height: 540px;
-            margin: 0 auto;
+            min-height: 650px;
+            margin: 0;
+            overflow: hidden;
         }
 
         .lamp-image {
             display: block;
-            width: min(1100px, 94vw);
+            width: 100%;
             max-width: none;
-            height: auto;
-            margin: 0 auto;
+            min-height: 650px;
+            height: 650px;
+            object-fit: cover;
+            object-position: center;
             cursor: pointer;
-            filter: drop-shadow(0 28px 52px rgba(0, 0, 0, 0.44));
-            transition: transform 0.25s ease;
+            filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.38));
+            transition: transform 0.35s ease;
         }
 
         .lamp-image:hover {
-            transform: scale(1.035);
+            transform: scale(1.025);
         }
 
         .fog {
             position: absolute;
-            top: -80px;
+            top: 8%;
             left: 50%;
-            width: 340px;
-            height: 330px;
+            width: 400px;
+            height: 360px;
             opacity: 0;
             pointer-events: none;
             border-radius: 50%;
             transform: translateX(-50%);
-            filter: blur(8px);
+            filter: blur(12px);
             background:
-                radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.88), transparent 22%),
-                radial-gradient(circle at 35% 47%, rgba(196, 233, 255, 0.72), transparent 31%),
-                radial-gradient(circle at 65% 35%, rgba(231, 183, 255, 0.66), transparent 35%);
+                radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.9), transparent 22%),
+                radial-gradient(circle at 35% 47%, rgba(196, 233, 255, 0.74), transparent 31%),
+                radial-gradient(circle at 65% 35%, rgba(231, 183, 255, 0.68), transparent 35%);
         }
 
         .fog.active {
-            animation: clickFogRise 2.3s ease-out;
+            animation: clickFogRise 2.4s ease-out;
         }
 
         @keyframes clickFogRise {
             0% {
                 opacity: 0;
-                transform: translateX(-50%) translateY(40px) scale(0.5);
+                transform: translateX(-50%) translateY(60px) scale(0.5);
             }
 
             30% {
-                opacity: 0.9;
+                opacity: 0.92;
             }
 
             100% {
                 opacity: 0;
-                transform: translateX(-50%) translateY(-330px) scale(1.8);
+                transform: translateX(-50%) translateY(-390px) scale(1.85);
             }
         }
 
@@ -674,32 +451,32 @@
         }
 
         .offer-1 {
-            top: 7%;
+            top: 8%;
             left: 4%;
             background: #fed7e2;
         }
 
         .offer-2 {
-            top: 5%;
+            top: 6%;
             right: 4%;
             background: #c6f6d5;
         }
 
         .offer-3 {
-            bottom: 22%;
+            bottom: 21%;
             left: 4%;
             background: #feebc8;
         }
 
         .offer-4 {
             right: 4%;
-            bottom: 20%;
+            bottom: 19%;
             background: #bee3f8;
         }
 
         .rub-instruction {
             display: inline-block;
-            margin-top: 20px;
+            margin: 26px 20px 0;
             padding: 17px 34px;
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.22);
@@ -791,18 +568,9 @@
             .categories-grid {
                 grid-template-columns: repeat(4, minmax(0, 1fr));
             }
-
-            .lamp-container {
-                min-height: 470px;
-            }
         }
 
         @media (max-width: 900px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-                max-width: 520px;
-            }
-
             .categories-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
@@ -816,16 +584,19 @@
                 justify-content: center;
             }
 
-            .magic-animation-section {
-                min-height: 650px;
+            .slide-content {
+                padding: 55px 45px;
             }
 
-            .magic-stage {
-                min-height: 390px;
+            .slide-content h3 {
+                font-size: 48px;
             }
 
-            .lamp-container {
-                min-height: 410px;
+            .slider,
+            .lamp-container,
+            .lamp-image {
+                min-height: 520px;
+                height: 520px;
             }
         }
 
@@ -847,78 +618,47 @@
             }
 
             .hero h1,
-            .magic-content h2,
             .genie-lamp-section h2 {
                 font-size: 32px;
             }
 
             .hero p,
-            .magic-content > p,
-            .genie-lamp-section p {
+            .genie-lamp-section > p {
                 font-size: 17px;
             }
 
             .section-title,
+            .product-slider-section h2,
             .categories h2 {
                 font-size: 32px;
             }
 
             .video-section,
-            .discount-section,
             .categories {
                 padding: 60px 18px;
             }
 
-            .magic-animation-section,
-            .genie-lamp-section {
-                padding: 70px 16px;
+            .product-slider-section {
+                padding: 60px 0;
             }
 
-            .discount-content h2 {
-                font-size: 60px;
-            }
-
-            .discount-content h3 {
-                font-size: 27px;
-            }
-
-            .magic-animation-section {
-                min-height: 600px;
-            }
-
-            .magic-stage {
-                min-height: 330px;
-            }
-
-            .magic-lamp-large {
-                width: 94vw;
-                bottom: 0;
-            }
-
-            .smoke {
-                bottom: 95px;
-                width: 190px;
-                height: 210px;
-            }
-
-            .smoke-two {
-                bottom: 88px;
-                width: 170px;
-                height: 200px;
-            }
-
-            .smoke-three {
-                bottom: 88px;
-                width: 200px;
-                height: 210px;
-            }
-
-            .lamp-container {
-                min-height: 330px;
-            }
-
+            .slider,
+            .lamp-container,
             .lamp-image {
-                width: 100%;
+                min-height: 380px;
+                height: 380px;
+            }
+
+            .slide-content {
+                padding: 38px 25px;
+            }
+
+            .slide-content h3 {
+                font-size: 36px;
+            }
+
+            .slide-content p {
+                font-size: 17px;
             }
 
             .offer-popup {
@@ -950,7 +690,7 @@
 
 <body>
 
-    <!-- Main Banner -->
+    <!-- Main top banner -->
     <section class="banner-image">
         <img src="./assets/wish-jinny-banner.png" alt="Wish Jinny Main Banner">
     </section>
@@ -962,8 +702,7 @@
 
             <nav class="nav-links">
                 <a href="#video">Video</a>
-                <a href="#discount">Offers</a>
-                <a href="#magic-animation">Magic</a>
+                <a href="#product-slider">Offers</a>
                 <a href="#rub-lamp">Rub Lamp</a>
                 <a href="#categories">Categories</a>
             </nav>
@@ -976,81 +715,89 @@
         <p>Explore exciting products, offers, and magical deals.</p>
     </section>
 
-    <!-- Videos -->
+    <!-- Only one video -->
     <section class="video-section" id="video">
         <h2 class="section-title">Watch How It Works</h2>
 
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-placeholder">
-                    <span>🎥</span>
-                    <div>Demo Video 1</div>
+        <div class="single-video-card">
+            <video controls playsinline>
+                <source src="./assets/wish-jinny-how-it-works.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>How to Use Wish Jinny</h3>
+        </div>
+    </section>
+
+    <!-- Discover the Magic Lamp: auto-changing product banner -->
+    <section class="product-slider-section" id="product-slider">
+        <h2>Discover the Magic of Shopping</h2>
+        <p>New categories, new offers, and magical savings—changing automatically.</p>
+
+        <div class="slider">
+            <div class="slide slide-1">
+                <div class="slide-content">
+                    <span>BEAUTY COLLECTION</span>
+                    <h3>Beauty That Feels Magical</h3>
+                    <p>Explore cosmetics, skincare, and everyday beauty essentials.</p>
                 </div>
-                <h3>How to Use Wish Jinny</h3>
             </div>
 
-            <div class="video-card">
-                <div class="video-placeholder">
-                    <span>🎥</span>
-                    <div>Demo Video 2</div>
+            <div class="slide slide-2">
+                <div class="slide-content">
+                    <span>JEWELLERY OFFERS</span>
+                    <h3>Shine with Every Wish</h3>
+                    <p>Discover elegant jewellery and special sparkling deals.</p>
                 </div>
-                <h3>Product Showcase</h3>
             </div>
 
-            <div class="video-card">
-                <div class="video-placeholder">
-                    <span>🎥</span>
-                    <div>Demo Video 3</div>
+            <div class="slide slide-3">
+                <div class="slide-content">
+                    <span>FASHION SALE</span>
+                    <h3>Style Your Dream Look</h3>
+                    <p>Fashion, garments, and trendy finds for every occasion.</p>
                 </div>
-                <h3>Customer Reviews</h3>
+            </div>
+
+            <div class="slide slide-4">
+                <div class="slide-content">
+                    <span>FOOTWEAR DEALS</span>
+                    <h3>Step Into Amazing Savings</h3>
+                    <p>Comfortable footwear and stylish choices at magical prices.</p>
+                </div>
+            </div>
+
+            <div class="slide slide-5">
+                <div class="slide-content">
+                    <span>SMART GADGETS</span>
+                    <h3>Make Every Moment Smarter</h3>
+                    <p>Explore watches, accessories, and exciting gadget offers.</p>
+                </div>
+            </div>
+
+            <div class="slide slide-6">
+                <div class="slide-content">
+                    <span>AUDIO & TECH</span>
+                    <h3>Hear the Magic</h3>
+                    <p>Headphones, earbuds, and tech products made for you.</p>
+                </div>
+            </div>
+
+            <div class="slider-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
 
-    <!-- 50% Offer Poster -->
-    <section class="discount-section" id="discount">
-        <div class="discount-poster">
-            <div class="discount-content">
-                <div class="discount-tag">LIMITED TIME MAGIC OFFER</div>
-                <h2>50% OFF</h2>
-                <h3>Wish Big. Save Bigger.</h3>
-                <p>Unlock magical shopping deals with Wish Jinny.</p>
-                <a href="#categories" class="shop-now-button">SHOP NOW</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Full-screen magic-lamp fog animation -->
-    <section class="magic-animation-section" id="magic-animation">
-        <div class="magic-content">
-            <h2>Magic Begins with a Wish</h2>
-            <p>Watch the mystical fog rise from the magic lamp.</p>
-
-            <div class="magic-stage">
-                <div class="smoke"></div>
-                <div class="smoke-two"></div>
-                <div class="smoke-three"></div>
-
-                <div class="magic-orb orb-one"></div>
-                <div class="magic-orb orb-two"></div>
-                <div class="magic-orb orb-three"></div>
-                <div class="magic-orb orb-four"></div>
-
-                <img
-                    src="./assets/lamp-rub.png"
-                    alt="Magic lamp with fog animation"
-                    class="magic-lamp-large"
-                >
-            </div>
-
-            <div class="magic-note">✦ Magical fog • Sparkling wishes • Surprise offers ✦</div>
-        </div>
-    </section>
-
-    <!-- One large, real clickable Rub Lamp image -->
+    <!-- Lamp is only here and full banner-size -->
     <section class="genie-lamp-section" id="rub-lamp">
         <h2>Rub the Lamp, Get Amazing Offers!</h2>
-        <p>Click the large magic lamp to reveal exclusive discounts.</p>
+        <p>Click the lamp to reveal exclusive discounts.</p>
 
         <div class="lamp-container">
             <img
@@ -1071,7 +818,7 @@
         <div class="rub-instruction">👆 Click on the lamp to rub it!</div>
     </section>
 
-    <!-- Categories -->
+    <!-- Round categories -->
     <section class="categories" id="categories">
         <h2>Shop by Category</h2>
 
