@@ -4,363 +4,562 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wish Jinny - Rub the Lamp, Get Offers!</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: Arial, sans-serif;
             background: #f7fafc;
             color: #2d3748;
             line-height: 1.6;
             width: 100%;
         }
-        
-        /* Banner Header */
-        .banner-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 60px 40px;
-            text-align: center;
-            color: white;
+
+        /* Top banner image */
+        .banner-image {
             width: 100%;
+            background: #ffffff;
+            padding: 12px;
+            text-align: center;
         }
-        .banner-header h1 {
-            font-size: 56px;
-            font-weight: 900;
-            margin-bottom: 15px;
-            text-shadow: 0 3px 20px rgba(0,0,0,0.4);
+
+        .banner-image img {
+            width: 100%;
+            max-width: 1600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 14px;
         }
-        .banner-header p {
-            font-size: 24px;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-        
+
+        /* Navigation */
         header {
             background: #2d3748;
-            padding: 20px 40px;
+            padding: 18px 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
+
         .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             max-width: 1600px;
             margin: 0 auto;
-        }
-        .logo {
-            font-size: 36px;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-        }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 17px;
-        }
-        
-        .hero {
-            background: white;
-            padding: 60px 40px;
-            text-align: center;
-            width: 100%;
-        }
-        .hero-image {
-            max-width: 500px;
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        .video-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 80px 40px;
-            text-align: center;
-            width: 100%;
-        }
-        .video-section h2 {
-            font-size: 44px;
-            margin-bottom: 50px;
-            color: white;
-            font-weight: 700;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .video-card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-        }
-        .video-placeholder {
-            width: 100%;
-            height: 300px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-            color: white;
-            font-size: 22px;
-            flex-direction: column;
-            gap: 15px;
+            justify-content: space-between;
         }
-        .video-placeholder span { font-size: 70px; }
-        .video-card h3 {
-            padding: 25px;
-            color: #2d3748;
-            font-size: 20px;
-            font-weight: 700;
+
+        .logo {
+            color: #ffffff;
+            font-size: 34px;
+            font-weight: 800;
+            text-decoration: none;
         }
-        
-        .lamp-intro-section {
-            background: white;
-            padding: 80px 40px;
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #fbd38d;
+        }
+
+        /* Hero lamp area */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 65px 25px;
             text-align: center;
-            width: 100%;
         }
-        .lamp-intro-section h2 {
-            font-size: 44px;
+
+        .hero h1 {
+            color: #ffffff;
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero p {
+            color: #ffffff;
+            font-size: 21px;
             margin-bottom: 30px;
-            color: #2d3748;
-            font-weight: 700;
         }
-        .lamp-intro-section p {
-            font-size: 22px;
-            margin-bottom: 40px;
-            color: #4a5568;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .lamp-intro-image {
-            max-width: 450px;
+
+        .hero-image {
             width: 100%;
+            max-width: 450px;
             height: auto;
             margin: 0 auto;
             display: block;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+            filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.35));
+            animation: float 3s ease-in-out infinite;
         }
-        
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        /* Video section */
+        .video-section {
+            background: #ffffff;
+            padding: 80px 35px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #2d3748;
+            font-size: 42px;
+            margin-bottom: 42px;
+        }
+
+        .video-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            overflow: hidden;
+            border-radius: 22px;
+            background: #1a202c;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-placeholder {
+            height: 245px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            font-size: 19px;
+        }
+
+        .video-placeholder span {
+            font-size: 58px;
+        }
+
+        .video-card h3 {
+            padding: 20px;
+            color: #ffffff;
+            font-size: 18px;
+        }
+
+        /* Second lamp image */
+        .lamp-intro-section {
+            background: #f7fafc;
+            padding: 80px 25px;
+            text-align: center;
+        }
+
+        .lamp-intro-section h2 {
+            color: #2d3748;
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .lamp-intro-section p {
+            color: #4a5568;
+            max-width: 720px;
+            margin: 0 auto 35px;
+            font-size: 20px;
+        }
+
+        .lamp-intro-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Interactive lamp */
         .genie-lamp-section {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 100px 40px;
+            color: #ffffff;
+            padding: 95px 25px;
             text-align: center;
-            color: white;
-            width: 100%;
         }
+
         .genie-lamp-section h2 {
-            font-size: 48px;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-            font-weight: 800;
+            font-size: 46px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
         }
+
         .genie-lamp-section p {
-            font-size: 24px;
-            margin-bottom: 50px;
-            opacity: 0.95;
+            font-size: 21px;
+            margin-bottom: 42px;
         }
+
         .lamp-container {
-            position: relative;
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
         }
+
         .lamp-image {
-            max-width: 400px;
             width: 100%;
+            max-width: 390px;
             height: auto;
-            cursor: pointer;
-            transition: transform 0.3s;
-            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.4));
             display: block;
             margin: 0 auto;
+            cursor: pointer;
+            filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));
+            transition: transform 0.25s ease;
         }
-        .lamp-image:hover { transform: scale(1.05); }
+
+        .lamp-image:hover {
+            transform: scale(1.05);
+        }
+
         .fog {
             position: absolute;
-            top: -100px;
+            top: -80px;
             left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
+            width: 210px;
+            height: 210px;
             opacity: 0;
             pointer-events: none;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
         }
-        .fog.active { animation: fogRise 2s ease-out; }
+
+        .fog.active {
+            animation: fogRise 2s ease-out;
+        }
+
         @keyframes fogRise {
-            0% { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.5); }
-            50% { opacity: 0.7; }
-            100% { opacity: 0; transform: translateX(-50%) translateY(-200px) scale(1.5); }
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(0) scale(0.5);
+            }
+
+            45% {
+                opacity: 0.75;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-190px) scale(1.5);
+            }
         }
+
         .offer-popup {
             position: absolute;
-            background: white;
+            z-index: 3;
+            padding: 16px 24px;
+            border-radius: 13px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
             color: #2d3748;
-            padding: 20px 35px;
-            border-radius: 15px;
-            font-weight: 700;
-            font-size: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            font-size: 17px;
+            font-weight: 800;
             opacity: 0;
             pointer-events: none;
             white-space: nowrap;
         }
-        .offer-popup.active { animation: popupFloat 2.5s ease-out; }
+
+        .offer-popup.active {
+            animation: popupFloat 2.5s ease-out;
+        }
+
         @keyframes popupFloat {
-            0% { opacity: 0; transform: translateY(0) scale(0.8); }
-            20% { opacity: 1; transform: translateY(-20px) scale(1); }
-            80% { opacity: 1; }
-            100% { opacity: 0; transform: translateY(-100px) scale(1.1); }
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.8);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(-18px) scale(1);
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-105px) scale(1.05);
+            }
         }
-        .offer-1 { top: 10%; left: 10%; background: #fed7e2; }
-        .offer-2 { top: 5%; right: 10%; background: #c6f6d5; }
-        .offer-3 { bottom: 25%; left: 15%; background: #feebc8; }
-        .offer-4 { bottom: 20%; right: 10%; background: #bee3f8; }
+
+        .offer-1 {
+            top: 6%;
+            left: 0;
+            background: #fed7e2;
+        }
+
+        .offer-2 {
+            top: 4%;
+            right: 0;
+            background: #c6f6d5;
+        }
+
+        .offer-3 {
+            bottom: 25%;
+            left: 0;
+            background: #feebc8;
+        }
+
+        .offer-4 {
+            right: 0;
+            bottom: 22%;
+            background: #bee3f8;
+        }
+
         .rub-instruction {
-            margin-top: 40px;
-            font-size: 22px;
-            opacity: 0.9;
-            background: rgba(255,255,255,0.2);
-            padding: 20px 45px;
-            border-radius: 50px;
             display: inline-block;
-            font-weight: 600;
+            margin-top: 38px;
+            padding: 17px 34px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.22);
+            font-size: 19px;
+            font-weight: 700;
         }
-        
+
+        /* Round categories */
         .categories {
             background: #f7fafc;
-            padding: 100px 40px;
-            width: 100%;
+            padding: 90px 35px;
         }
+
         .categories h2 {
-            text-align: center;
-            font-size: 48px;
-            margin-bottom: 70px;
             color: #2d3748;
-            font-weight: 700;
+            font-size: 46px;
+            text-align: center;
+            margin-bottom: 65px;
         }
+
         .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 35px;
             max-width: 1600px;
             margin: 0 auto;
-            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 30px;
         }
+
         .category-card {
-            background: white;
-            border-radius: 50%;
+            aspect-ratio: 1 / 1;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            aspect-ratio: 1;
             display: flex;
             flex-direction: column;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
+
         .category-card:hover {
-            transform: translateY(-12px) scale(1.08);
-            box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
         }
-        .category-image {
+
+        .category-card img {
             width: 100%;
             height: 72%;
-            object-fit: cover;
             display: block;
+            object-fit: cover;
         }
+
         .category-card h3 {
-            padding: 18px;
-            font-size: 18px;
-            color: #2d3748;
-            font-weight: 700;
-            text-align: center;
-            flex-grow: 1;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 50px 40px;
+            padding: 10px;
+            color: #2d3748;
+            font-size: 16px;
             text-align: center;
-            width: 100%;
         }
+
+        /* Footer */
+        footer {
+            padding: 45px 25px;
+            background: #2d3748;
+            color: #a0aec0;
+            text-align: center;
+        }
+
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 35px;
-            margin-bottom: 25px;
             flex-wrap: wrap;
+            gap: 28px;
+            margin-bottom: 20px;
         }
+
         .footer-links a {
-            color: #a0aec0;
+            color: #cbd5e0;
             text-decoration: none;
-            font-size: 16px;
         }
-        .footer-links a:hover { color: white; }
-        .copyright { color: #718096; font-size: 15px; }
-        
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
         @media (max-width: 1200px) {
-            .categories-grid { grid-template-columns: repeat(4, 1fr); }
+            .categories-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
         }
-        @media (max-width: 768px) {
-            .categories-grid { grid-template-columns: repeat(3, 1fr); }
-            .hero-image, .lamp-intro-image { max-width: 350px; }
-            .video-placeholder { height: 220px; }
-            .lamp-image { max-width: 300px; }
-            .banner-header h1 { font-size: 42px; }
-            .banner-header p { font-size: 18px; }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .header-content {
+                gap: 15px;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 14px 16px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero h1,
+            .genie-lamp-section h2 {
+                font-size: 32px;
+            }
+
+            .hero p,
+            .genie-lamp-section p {
+                font-size: 17px;
+            }
+
+            .section-title,
+            .lamp-intro-section h2,
+            .categories h2 {
+                font-size: 32px;
+            }
+
+            .video-section,
+            .lamp-intro-section,
+            .categories {
+                padding: 60px 18px;
+            }
+
+            .categories-grid {
+                gap: 16px;
+            }
+
+            .category-card h3 {
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            .offer-popup {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .offer-1,
+            .offer-3 {
+                left: -6px;
+            }
+
+            .offer-2,
+            .offer-4 {
+                right: -6px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <!-- Banner Header -->
-    <section class="banner-header">
-        <h1>Wish Jinny</h1>
-        <p>Rub the Lamp, Get Amazing Offers!</p>
+
+    <!-- ऊपर आपका main Wish Jinny banner -->
+    <section class="banner-image">
+        <img src="./assets/wish-jinny-banner.png" alt="Wish Jinny Main Banner">
     </section>
-    
+
+    <!-- Navigation -->
     <header>
         <div class="header-content">
-            <a href="#" class="logo">Wish Jinny</a>
+            <a class="logo" href="#">Wish Jinny</a>
+
             <nav class="nav-links">
                 <a href="#video">Video</a>
                 <a href="#lamp-intro">Lamp</a>
-                <a href="#genie-lamp">Rub Lamp</a>
+                <a href="#rub-lamp">Rub Lamp</a>
                 <a href="#categories">Categories</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Image -->
+    <!-- Main lamp image -->
     <section class="hero">
-        <img src="assets/pfront-genie-lamp.png" alt="Wish Jinny Lamp" class="hero-image">
+        <h1>Make a Wish with Wish Jinny</h1>
+        <p>Rub the lamp and discover amazing offers</p>
+
+        <img
+            src="./assets/lamp-rub.png"
+            alt="Wish Jinny Magic Lamp"
+            class="hero-image"
+        >
     </section>
 
-    <!-- Video Section -->
+    <!-- Video section -->
     <section class="video-section" id="video">
-        <h2>Watch How It Works</h2>
+        <h2 class="section-title">Watch How It Works</h2>
+
         <div class="video-grid">
             <div class="video-card">
                 <div class="video-placeholder">
@@ -369,6 +568,7 @@
                 </div>
                 <h3>How to Use Wish Jinny</h3>
             </div>
+
             <div class="video-card">
                 <div class="video-placeholder">
                     <span>🎥</span>
@@ -376,6 +576,7 @@
                 </div>
                 <h3>Product Showcase</h3>
             </div>
+
             <div class="video-card">
                 <div class="video-placeholder">
                     <span>🎥</span>
@@ -386,80 +587,104 @@
         </div>
     </section>
 
-    <!-- Lamp Intro Section -->
+    <!-- Video के नीचे वाली दूसरी lamp image -->
     <section class="lamp-intro-section" id="lamp-intro">
         <h2>Discover the Magic Lamp</h2>
-        <p>Rub the magical genie lamp and unlock amazing offers, discounts, and coupons!</p>
-        <img src="assets/lamp-rub.png" alt="Magic Lamp" class="lamp-intro-image">
+        <p>Rub the magical genie lamp and unlock offers, coupons, and discounts.</p>
+
+        <img
+            src="./assets/lamp-rub.png"
+            alt="Magic Lamp"
+            class="lamp-intro-image"
+        >
     </section>
 
-    <!-- Interactive Genie Lamp Section -->
-    <section class="genie-lamp-section" id="genie-lamp">
+    <!-- Interactive rub-lamp section -->
+    <section class="genie-lamp-section" id="rub-lamp">
         <h2>Rub the Lamp, Get Amazing Offers!</h2>
-        <p>Click on the lamp to reveal exclusive discounts</p>
-        
+        <p>Click the lamp to reveal exclusive discounts.</p>
+
         <div class="lamp-container">
-            <img src="assets/pfront-genie-lamp.png" alt="Rub the Lamp" class="lamp-image" id="genieLamp">
+            <img
+                src="./assets/lamp-rub.png"
+                alt="Click to rub the lamp"
+                class="lamp-image"
+                id="genieLamp"
+            >
+
             <div class="fog" id="fog"></div>
+
             <div class="offer-popup offer-1" id="offer1">🎉 50% OFF</div>
             <div class="offer-popup offer-2" id="offer2">💰 Flat ₹200 Cashback</div>
             <div class="offer-popup offer-3" id="offer3">🔥 Buy 1 Get 1 Free</div>
             <div class="offer-popup offer-4" id="offer4">⭐ Extra 30% OFF</div>
         </div>
-        
+
         <div class="rub-instruction">👆 Click on the lamp to rub it!</div>
     </section>
 
-    <!-- Categories Section -->
+    <!-- Categories -->
     <section class="categories" id="categories">
         <h2>Shop by Category</h2>
+
         <div class="categories-grid">
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=400&h=400&fit=crop" alt="Cosmetics" class="category-image">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=500&h=500&fit=crop" alt="Cosmetics">
                 <h3>Cosmetics</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop" alt="Jewelry" class="category-image">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=500&fit=crop" alt="Jewelry">
                 <h3>Jewelry</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&h=400&fit=crop" alt="Garments" class="category-image">
+                <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=500&h=500&fit=crop" alt="Garments">
                 <h3>Garments</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop" alt="Footwear" class="category-image">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop" alt="Footwear">
                 <h3>Footwear</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=400&h=400&fit=crop" alt="Home & Living" class="category-image">
-                <h3>Home & Living</h3>
+                <img src="https://images.unsplash.com/photo-1556910179-1b962b8e64ab?w=500&h=500&fit=crop" alt="Home and Living">
+                <h3>Home &amp; Living</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=400&fit=crop" alt="Kids Toys" class="category-image">
+                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=500&h=500&fit=crop" alt="Kids Toys">
                 <h3>Kids Toys</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Mobile Covers" class="category-image">
+                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=500&h=500&fit=crop" alt="Mobile Covers">
                 <h3>Mobile Covers</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Smart Watch" class="category-image">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop" alt="Smart Watch">
                 <h3>Smart Watch</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=400&fit=crop" alt="AirBuds" class="category-image">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&h=500&fit=crop" alt="AirBuds">
                 <h3>AirBuds</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Headphones" class="category-image">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop" alt="Headphones">
                 <h3>Headphones</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop" alt="Teddy Bears" class="category-image">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&h=500&fit=crop" alt="Teddy Bears">
                 <h3>Teddy Bears</h3>
             </div>
+
             <div class="category-card">
-                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=400&h=400&fit=crop" alt="Soft Toys" class="category-image">
+                <img src="https://images.unsplash.com/photo-1558877385-84a2c648bb48?w=500&h=500&fit=crop" alt="Soft Toys">
                 <h3>Soft Toys</h3>
             </div>
         </div>
@@ -472,33 +697,48 @@
             <a href="#">Contact Us</a>
             <a href="#">About</a>
         </div>
-        <p class="copyright">© 2024 Wish Jinny. All rights reserved.</p>
+
+        <p>© 2026 Wish Jinny. All rights reserved.</p>
     </footer>
 
     <script>
-        const genieLamp = document.getElementById('genieLamp');
-        const fog = document.getElementById('fog');
+        const genieLamp = document.getElementById("genieLamp");
+        const fog = document.getElementById("fog");
+
         const offers = [
-            document.getElementById('offer1'),
-            document.getElementById('offer2'),
-            document.getElementById('offer3'),
-            document.getElementById('offer4')
+            document.getElementById("offer1"),
+            document.getElementById("offer2"),
+            document.getElementById("offer3"),
+            document.getElementById("offer4")
         ];
+
         let isAnimating = false;
 
-        genieLamp.addEventListener('click', () => {
-            if (isAnimating) return;
+        genieLamp.addEventListener("click", function () {
+            if (isAnimating) {
+                return;
+            }
+
             isAnimating = true;
-            fog.classList.add('active');
-            offers.forEach((offer, index) => {
-                setTimeout(() => offer.classList.add('active'), index * 300);
+            fog.classList.add("active");
+
+            offers.forEach(function (offer, index) {
+                setTimeout(function () {
+                    offer.classList.add("active");
+                }, index * 250);
             });
-            setTimeout(() => {
-                fog.classList.remove('active');
-                offers.forEach(offer => offer.classList.remove('active'));
+
+            setTimeout(function () {
+                fog.classList.remove("active");
+
+                offers.forEach(function (offer) {
+                    offer.classList.remove("active");
+                });
+
                 isAnimating = false;
             }, 3000);
         });
     </script>
+
 </body>
 </html>
