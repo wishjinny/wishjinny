@@ -24,7 +24,7 @@
             overflow-x: hidden;
         }
 
-        /* Main top banner */
+        /* Top full-screen banner image */
         .banner-image {
             width: 100%;
             margin: 0;
@@ -46,9 +46,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #2d3748;
+            background: #17112f;
             padding: 18px 40px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.24);
         }
 
         .header-content {
@@ -80,22 +80,22 @@
         }
 
         .nav-links a:hover {
-            color: #fbd38d;
+            color: #ffe590;
         }
 
-        /* Main welcome section */
+        /* Welcome section */
         .hero {
             padding: 75px 25px;
             text-align: center;
             color: #ffffff;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #5535b8 0%, #8d43d6 55%, #d34d9f 100%);
         }
 
         .hero h1 {
             font-size: 50px;
             line-height: 1.15;
             margin-bottom: 16px;
-            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.28);
         }
 
         .hero p {
@@ -153,7 +153,7 @@
             font-size: 18px;
         }
 
-        /* 50% Discount poster */
+        /* Discount poster */
         .discount-section {
             padding: 75px 25px;
             background: #f7fafc;
@@ -161,19 +161,19 @@
 
         .discount-poster {
             position: relative;
-            max-width: 1350px;
-            min-height: 400px;
+            max-width: 1400px;
+            min-height: 410px;
             margin: 0 auto;
             overflow: hidden;
-            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #ffffff;
+            border-radius: 30px;
             background:
-                radial-gradient(circle at 15% 20%, rgba(255, 238, 140, 0.38), transparent 23%),
-                radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.22), transparent 26%),
+                radial-gradient(circle at 15% 18%, rgba(255, 238, 140, 0.38), transparent 23%),
+                radial-gradient(circle at 84% 75%, rgba(255, 255, 255, 0.19), transparent 26%),
                 linear-gradient(135deg, #5420a8 0%, #9d3dd6 48%, #f5576c 100%);
             box-shadow: 0 20px 42px rgba(91, 40, 137, 0.34);
         }
@@ -184,27 +184,16 @@
             top: 25px;
             left: 0;
             width: 100%;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.72);
             font-size: 30px;
             letter-spacing: 15px;
             animation: sparkleMove 5s linear infinite;
         }
 
-        .discount-poster::after {
-            content: "🪔";
-            position: absolute;
-            right: 8%;
-            bottom: 25px;
-            color: #ffd86b;
-            font-size: 150px;
-            filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.3));
-            transform: rotate(-8deg);
-        }
-
         .discount-content {
             position: relative;
             z-index: 2;
-            padding: 45px 210px 45px 45px;
+            padding: 45px;
         }
 
         .discount-tag {
@@ -220,7 +209,7 @@
         }
 
         .discount-content h2 {
-            font-size: 76px;
+            font-size: 78px;
             line-height: 1;
             color: #fff3ae;
             text-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
@@ -255,8 +244,8 @@
 
         @keyframes sparkleMove {
             0% {
-                transform: translateX(-10px);
-                opacity: 0.5;
+                transform: translateX(-12px);
+                opacity: 0.48;
             }
 
             50% {
@@ -264,245 +253,395 @@
             }
 
             100% {
-                transform: translateX(10px);
-                opacity: 0.5;
+                transform: translateX(12px);
+                opacity: 0.48;
             }
         }
 
-        /* Animated Jinny poster */
-        .jinny-section {
-            padding: 85px 25px;
-            text-align: center;
-            color: #ffffff;
-            background: linear-gradient(135deg, #1e174d 0%, #5420a8 52%, #9d3dd6 100%);
-        }
-
-        .jinny-section h2 {
-            margin-bottom: 12px;
-            font-size: 44px;
-        }
-
-        .jinny-section > p {
-            margin-bottom: 42px;
-            font-size: 20px;
-            opacity: 0.95;
-        }
-
-        .jinny-card {
+        /* Full-screen magic animation: no diya / no Diwali lamp */
+        .magic-animation-section {
             position: relative;
-            max-width: 1100px;
-            min-height: 390px;
-            margin: 0 auto;
+            min-height: 720px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            background:
-                radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.33), transparent 14%),
-                radial-gradient(circle at 20% 72%, rgba(249, 199, 79, 0.22), transparent 16%),
-                radial-gradient(circle at 82% 67%, rgba(246, 115, 165, 0.22), transparent 17%),
-                rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-        }
-
-        .jinny-card::before {
-            content: "✦";
-            position: absolute;
-            top: 42px;
-            left: 12%;
-            color: #fff1a2;
-            font-size: 45px;
-            animation: twinkle 2s ease-in-out infinite;
-        }
-
-        .jinny-card::after {
-            content: "✧";
-            position: absolute;
-            right: 13%;
-            bottom: 45px;
+            padding: 90px 25px;
+            text-align: center;
             color: #ffffff;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(126, 91, 255, 0.48), transparent 22%),
+                radial-gradient(circle at 18% 20%, rgba(96, 214, 255, 0.2), transparent 18%),
+                radial-gradient(circle at 85% 76%, rgba(255, 119, 209, 0.18), transparent 21%),
+                linear-gradient(135deg, #08051e 0%, #24124c 48%, #4b197c 100%);
+        }
+
+        .magic-animation-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.65;
+            background-image:
+                radial-gradient(circle, rgba(255, 255, 255, 0.95) 1.5px, transparent 2px),
+                radial-gradient(circle, rgba(255, 239, 153, 0.85) 1px, transparent 2px),
+                radial-gradient(circle, rgba(170, 219, 255, 0.8) 1px, transparent 2px);
+            background-size: 110px 110px, 170px 170px, 230px 230px;
+            background-position: 10px 20px, 60px 80px, 130px 35px;
+            animation: starDrift 18s linear infinite;
+        }
+
+        .magic-animation-section::after {
+            content: "";
+            position: absolute;
+            left: -20%;
+            bottom: -35%;
+            width: 140%;
+            height: 65%;
+            opacity: 0.52;
+            filter: blur(45px);
+            background:
+                radial-gradient(ellipse at 25% 55%, rgba(153, 127, 255, 0.72), transparent 35%),
+                radial-gradient(ellipse at 58% 45%, rgba(215, 116, 255, 0.6), transparent 35%),
+                radial-gradient(ellipse at 85% 62%, rgba(125, 215, 255, 0.5), transparent 34%);
+            animation: fogDrift 12s ease-in-out infinite alternate;
+        }
+
+        .magic-content {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .magic-content h2 {
+            margin-bottom: 12px;
             font-size: 52px;
-            animation: twinkle 2.4s ease-in-out infinite;
+            line-height: 1.15;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.42);
         }
 
-        .magic-smoke {
-            position: absolute;
-            bottom: 54px;
-            left: 50%;
-            width: 230px;
-            height: 230px;
-            border-radius: 50%;
-            transform: translateX(-50%);
-            background: radial-gradient(circle, rgba(178, 136, 255, 0.75), rgba(178, 136, 255, 0));
-            animation: smokeRise 3.5s ease-in-out infinite;
+        .magic-content > p {
+            margin-bottom: 28px;
+            font-size: 21px;
+            opacity: 0.96;
         }
 
-        .magic-lamp-icon {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            z-index: 2;
-            transform: translateX(-50%);
-            color: #ffd86b;
-            font-size: 125px;
-            filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.3));
-            animation: lampFloat 3s ease-in-out infinite;
-        }
-
-        .jinny-character {
+        .magic-stage {
             position: relative;
-            z-index: 3;
-            margin-bottom: 15px;
-            font-size: 130px;
-            filter: drop-shadow(0 15px 18px rgba(0, 0, 0, 0.35));
-            animation: jinnyFloat 3.5s ease-in-out infinite;
+            min-height: 440px;
+            margin: 0 auto;
         }
 
-        .jinny-text {
-            position: relative;
+        .magic-lamp-large {
+            position: absolute;
             z-index: 4;
-            padding: 25px;
+            left: 50%;
+            bottom: 15px;
+            width: min(740px, 88vw);
+            transform: translateX(-50%);
+            filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.48));
+            animation: magicLampFloat 4s ease-in-out infinite;
         }
 
-        .jinny-text h3 {
-            margin-bottom: 8px;
-            font-size: 34px;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+        .smoke {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            bottom: 145px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translateX(-50%);
+            filter: blur(12px);
+            background:
+                radial-gradient(circle at 48% 60%, rgba(255, 255, 255, 0.82), transparent 22%),
+                radial-gradient(circle at 35% 48%, rgba(177, 229, 255, 0.68), transparent 30%),
+                radial-gradient(circle at 66% 38%, rgba(207, 150, 255, 0.6), transparent 31%),
+                radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.4), transparent 40%);
+            animation: smokeRiseOne 5s ease-in-out infinite;
         }
 
-        .jinny-text p {
-            font-size: 19px;
+        .smoke-two {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            bottom: 130px;
+            width: 210px;
+            height: 250px;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translateX(-50%);
+            filter: blur(16px);
+            background:
+                radial-gradient(circle at 38% 58%, rgba(237, 242, 255, 0.7), transparent 25%),
+                radial-gradient(circle at 60% 45%, rgba(157, 224, 255, 0.58), transparent 33%),
+                radial-gradient(circle at 48% 20%, rgba(238, 186, 255, 0.52), transparent 40%);
+            animation: smokeRiseTwo 6.2s ease-in-out infinite;
         }
 
-        @keyframes smokeRise {
-            0%, 100% {
-                opacity: 0.3;
-                transform: translateX(-50%) translateY(10px) scale(0.85);
-            }
-
-            50% {
-                opacity: 0.85;
-                transform: translateX(-50%) translateY(-75px) scale(1.3);
-            }
+        .smoke-three {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            bottom: 125px;
+            width: 280px;
+            height: 260px;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translateX(-50%);
+            filter: blur(19px);
+            background:
+                radial-gradient(circle at 57% 58%, rgba(255, 255, 255, 0.55), transparent 27%),
+                radial-gradient(circle at 38% 40%, rgba(177, 150, 255, 0.58), transparent 37%),
+                radial-gradient(circle at 63% 18%, rgba(160, 233, 255, 0.45), transparent 42%);
+            animation: smokeRiseThree 7.1s ease-in-out infinite;
         }
 
-        @keyframes lampFloat {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0) rotate(-3deg);
-            }
-
-            50% {
-                transform: translateX(-50%) translateY(-10px) rotate(3deg);
-            }
+        .magic-orb {
+            position: absolute;
+            z-index: 3;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff7b3;
+            box-shadow: 0 0 12px #fff7b3, 0 0 25px #a8dfff;
+            animation: orbFloat 4.5s ease-in-out infinite;
         }
 
-        @keyframes jinnyFloat {
-            0%, 100% {
+        .orb-one {
+            left: 22%;
+            bottom: 32%;
+            animation-delay: 0s;
+        }
+
+        .orb-two {
+            left: 33%;
+            bottom: 56%;
+            width: 11px;
+            height: 11px;
+            animation-delay: 1.2s;
+        }
+
+        .orb-three {
+            right: 29%;
+            bottom: 41%;
+            width: 13px;
+            height: 13px;
+            animation-delay: 2.1s;
+        }
+
+        .orb-four {
+            right: 18%;
+            bottom: 64%;
+            width: 9px;
+            height: 9px;
+            animation-delay: 0.6s;
+        }
+
+        .magic-note {
+            position: relative;
+            z-index: 6;
+            display: inline-block;
+            margin-top: 4px;
+            padding: 13px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.12);
+            font-size: 17px;
+            backdrop-filter: blur(8px);
+        }
+
+        @keyframes starDrift {
+            0% {
                 transform: translateY(0);
             }
 
-            50% {
-                transform: translateY(-20px);
+            100% {
+                transform: translateY(-85px);
             }
         }
 
-        @keyframes twinkle {
+        @keyframes fogDrift {
+            0% {
+                transform: translateX(-5%) scale(0.95);
+            }
+
+            100% {
+                transform: translateX(7%) scale(1.12);
+            }
+        }
+
+        @keyframes magicLampFloat {
             0%, 100% {
-                opacity: 0.4;
-                transform: scale(0.7) rotate(0);
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-18px) scale(1.025);
+            }
+        }
+
+        @keyframes smokeRiseOne {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px) scale(0.55);
+            }
+
+            22% {
+                opacity: 0.82;
+            }
+
+            65% {
+                opacity: 0.55;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(calc(-50% - 75px)) translateY(-310px) scale(1.85);
+            }
+        }
+
+        @keyframes smokeRiseTwo {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(30px) scale(0.5);
+            }
+
+            24% {
+                opacity: 0.65;
+            }
+
+            68% {
+                opacity: 0.46;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(calc(-50% + 92px)) translateY(-350px) scale(1.9);
+            }
+        }
+
+        @keyframes smokeRiseThree {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(18px) scale(0.48);
+            }
+
+            26% {
+                opacity: 0.54;
+            }
+
+            70% {
+                opacity: 0.32;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(calc(-50% - 12px)) translateY(-400px) scale(2.05);
+            }
+        }
+
+        @keyframes orbFloat {
+            0%, 100% {
+                opacity: 0.2;
+                transform: translateY(0) scale(0.8);
             }
 
             50% {
                 opacity: 1;
-                transform: scale(1.25) rotate(20deg);
+                transform: translateY(-120px) scale(1.35);
             }
         }
 
-        /* One large working lamp */
+        /* Actual single clickable lamp - enlarged */
         .genie-lamp-section {
-            padding: 95px 25px;
+            padding: 105px 20px;
             text-align: center;
             color: #ffffff;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #e94f9a 0%, #b03ac7 48%, #6337c8 100%);
         }
 
         .genie-lamp-section h2 {
             margin-bottom: 16px;
-            font-size: 46px;
+            font-size: 48px;
             line-height: 1.2;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
         }
 
         .genie-lamp-section p {
-            margin-bottom: 42px;
+            margin-bottom: 45px;
             font-size: 21px;
         }
 
         .lamp-container {
             position: relative;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1500px;
+            min-height: 540px;
             margin: 0 auto;
         }
 
         .lamp-image {
             display: block;
-            width: 100%;
-            max-width: 750px;
+            width: min(1100px, 94vw);
+            max-width: none;
             height: auto;
             margin: 0 auto;
             cursor: pointer;
-            filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.38));
+            filter: drop-shadow(0 28px 52px rgba(0, 0, 0, 0.44));
             transition: transform 0.25s ease;
         }
 
         .lamp-image:hover {
-            transform: scale(1.04);
+            transform: scale(1.035);
         }
 
         .fog {
             position: absolute;
             top: -80px;
             left: 50%;
-            width: 210px;
-            height: 210px;
+            width: 340px;
+            height: 330px;
             opacity: 0;
             pointer-events: none;
             border-radius: 50%;
             transform: translateX(-50%);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+            filter: blur(8px);
+            background:
+                radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.88), transparent 22%),
+                radial-gradient(circle at 35% 47%, rgba(196, 233, 255, 0.72), transparent 31%),
+                radial-gradient(circle at 65% 35%, rgba(231, 183, 255, 0.66), transparent 35%);
         }
 
         .fog.active {
-            animation: fogRise 2s ease-out;
+            animation: clickFogRise 2.3s ease-out;
         }
 
-        @keyframes fogRise {
+        @keyframes clickFogRise {
             0% {
                 opacity: 0;
-                transform: translateX(-50%) translateY(0) scale(0.5);
+                transform: translateX(-50%) translateY(40px) scale(0.5);
             }
 
-            45% {
-                opacity: 0.75;
+            30% {
+                opacity: 0.9;
             }
 
             100% {
                 opacity: 0;
-                transform: translateX(-50%) translateY(-190px) scale(1.5);
+                transform: translateX(-50%) translateY(-330px) scale(1.8);
             }
         }
 
         .offer-popup {
             position: absolute;
             z-index: 3;
-            padding: 16px 24px;
-            border-radius: 13px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            padding: 17px 25px;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
             color: #2d3748;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 800;
             opacity: 0;
             pointer-events: none;
@@ -510,7 +649,7 @@
         }
 
         .offer-popup.active {
-            animation: popupFloat 2.5s ease-out;
+            animation: popupFloat 2.7s ease-out;
         }
 
         @keyframes popupFloat {
@@ -530,37 +669,37 @@
 
             100% {
                 opacity: 0;
-                transform: translateY(-105px) scale(1.05);
+                transform: translateY(-110px) scale(1.06);
             }
         }
 
         .offer-1 {
-            top: 8%;
-            left: 5%;
+            top: 7%;
+            left: 4%;
             background: #fed7e2;
         }
 
         .offer-2 {
-            top: 6%;
-            right: 5%;
+            top: 5%;
+            right: 4%;
             background: #c6f6d5;
         }
 
         .offer-3 {
-            bottom: 25%;
-            left: 5%;
+            bottom: 22%;
+            left: 4%;
             background: #feebc8;
         }
 
         .offer-4 {
-            right: 5%;
-            bottom: 22%;
+            right: 4%;
+            bottom: 20%;
             background: #bee3f8;
         }
 
         .rub-instruction {
             display: inline-block;
-            margin-top: 38px;
+            margin-top: 20px;
             padding: 17px 34px;
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.22);
@@ -652,6 +791,10 @@
             .categories-grid {
                 grid-template-columns: repeat(4, minmax(0, 1fr));
             }
+
+            .lamp-container {
+                min-height: 470px;
+            }
         }
 
         @media (max-width: 900px) {
@@ -673,17 +816,16 @@
                 justify-content: center;
             }
 
-            .lamp-image {
-                max-width: 620px;
+            .magic-animation-section {
+                min-height: 650px;
             }
 
-            .discount-content {
-                padding-right: 160px;
+            .magic-stage {
+                min-height: 390px;
             }
 
-            .discount-poster::after {
-                font-size: 110px;
-                right: 4%;
+            .lamp-container {
+                min-height: 410px;
             }
         }
 
@@ -705,14 +847,14 @@
             }
 
             .hero h1,
-            .genie-lamp-section h2,
-            .jinny-section h2 {
+            .magic-content h2,
+            .genie-lamp-section h2 {
                 font-size: 32px;
             }
 
             .hero p,
-            .genie-lamp-section p,
-            .jinny-section > p {
+            .magic-content > p,
+            .genie-lamp-section p {
                 font-size: 17px;
             }
 
@@ -727,48 +869,71 @@
                 padding: 60px 18px;
             }
 
-            .jinny-section,
+            .magic-animation-section,
             .genie-lamp-section {
                 padding: 70px 16px;
             }
 
-            .discount-poster {
-                min-height: 390px;
-            }
-
-            .discount-content {
-                padding: 35px 20px 145px;
-            }
-
             .discount-content h2 {
-                font-size: 58px;
+                font-size: 60px;
             }
 
             .discount-content h3 {
-                font-size: 26px;
-            }
-
-            .discount-poster::after {
-                right: 50%;
-                bottom: 8px;
-                font-size: 100px;
-                transform: translateX(50%);
-            }
-
-            .jinny-card {
-                min-height: 390px;
-            }
-
-            .jinny-character {
-                font-size: 105px;
-            }
-
-            .jinny-text h3 {
                 font-size: 27px;
             }
 
+            .magic-animation-section {
+                min-height: 600px;
+            }
+
+            .magic-stage {
+                min-height: 330px;
+            }
+
+            .magic-lamp-large {
+                width: 94vw;
+                bottom: 0;
+            }
+
+            .smoke {
+                bottom: 95px;
+                width: 190px;
+                height: 210px;
+            }
+
+            .smoke-two {
+                bottom: 88px;
+                width: 170px;
+                height: 200px;
+            }
+
+            .smoke-three {
+                bottom: 88px;
+                width: 200px;
+                height: 210px;
+            }
+
+            .lamp-container {
+                min-height: 330px;
+            }
+
             .lamp-image {
-                max-width: 100%;
+                width: 100%;
+            }
+
+            .offer-popup {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .offer-1,
+            .offer-3 {
+                left: -8px;
+            }
+
+            .offer-2,
+            .offer-4 {
+                right: -8px;
             }
 
             .categories-grid {
@@ -779,28 +944,13 @@
                 padding: 6px;
                 font-size: 12px;
             }
-
-            .offer-popup {
-                padding: 10px 12px;
-                font-size: 12px;
-            }
-
-            .offer-1,
-            .offer-3 {
-                left: -6px;
-            }
-
-            .offer-2,
-            .offer-4 {
-                right: -6px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Top main banner -->
+    <!-- Main Banner -->
     <section class="banner-image">
         <img src="./assets/wish-jinny-banner.png" alt="Wish Jinny Main Banner">
     </section>
@@ -813,7 +963,7 @@
             <nav class="nav-links">
                 <a href="#video">Video</a>
                 <a href="#discount">Offers</a>
-                <a href="#magic-jinny">Jinny Magic</a>
+                <a href="#magic-animation">Magic</a>
                 <a href="#rub-lamp">Rub Lamp</a>
                 <a href="#categories">Categories</a>
             </nav>
@@ -857,7 +1007,7 @@
         </div>
     </section>
 
-    <!-- First empty lamp place: 50% discount poster -->
+    <!-- 50% Offer Poster -->
     <section class="discount-section" id="discount">
         <div class="discount-poster">
             <div class="discount-content">
@@ -870,32 +1020,42 @@
         </div>
     </section>
 
-    <!-- Second empty lamp place: Jinny animation -->
-    <section class="jinny-section" id="magic-jinny">
-        <h2>Jinny’s Magic is Waiting</h2>
-        <p>Make a wish and let the surprises begin.</p>
+    <!-- Full-screen magic-lamp fog animation -->
+    <section class="magic-animation-section" id="magic-animation">
+        <div class="magic-content">
+            <h2>Magic Begins with a Wish</h2>
+            <p>Watch the mystical fog rise from the magic lamp.</p>
 
-        <div class="jinny-card">
-            <div class="magic-smoke"></div>
-            <div class="magic-lamp-icon">🪔</div>
+            <div class="magic-stage">
+                <div class="smoke"></div>
+                <div class="smoke-two"></div>
+                <div class="smoke-three"></div>
 
-            <div class="jinny-text">
-                <div class="jinny-character">🧞</div>
-                <h3>Hello! I’m Your Wish Jinny</h3>
-                <p>Discover special offers, surprise discounts, and magical rewards.</p>
+                <div class="magic-orb orb-one"></div>
+                <div class="magic-orb orb-two"></div>
+                <div class="magic-orb orb-three"></div>
+                <div class="magic-orb orb-four"></div>
+
+                <img
+                    src="./assets/lamp-rub.png"
+                    alt="Magic lamp with fog animation"
+                    class="magic-lamp-large"
+                >
             </div>
+
+            <div class="magic-note">✦ Magical fog • Sparkling wishes • Surprise offers ✦</div>
         </div>
     </section>
 
-    <!-- Lamp only once, large and clickable -->
+    <!-- One large, real clickable Rub Lamp image -->
     <section class="genie-lamp-section" id="rub-lamp">
         <h2>Rub the Lamp, Get Amazing Offers!</h2>
-        <p>Click the lamp to reveal exclusive discounts.</p>
+        <p>Click the large magic lamp to reveal exclusive discounts.</p>
 
         <div class="lamp-container">
             <img
                 src="./assets/lamp-rub.png"
-                alt="Click to rub the lamp"
+                alt="Click to rub the magic lamp"
                 class="lamp-image"
                 id="genieLamp"
             >
@@ -911,7 +1071,7 @@
         <div class="rub-instruction">👆 Click on the lamp to rub it!</div>
     </section>
 
-    <!-- Round categories -->
+    <!-- Categories -->
     <section class="categories" id="categories">
         <h2>Shop by Category</h2>
 
@@ -1024,7 +1184,7 @@
                 });
 
                 isAnimating = false;
-            }, 3000);
+            }, 3200);
         });
     </script>
 
