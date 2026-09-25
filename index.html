@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wish Jinny - Rub the Lamp, Get Offers!</title>
+    <title>Wish Jinny - Magical Offers</title>
 
     <style>
         * {
@@ -21,34 +21,34 @@
             background: #f7fafc;
             color: #2d3748;
             line-height: 1.6;
-            width: 100%;
+            overflow-x: hidden;
         }
 
-        /* Top banner image */
+        /* Main top banner */
         .banner-image {
             width: 100%;
+            margin: 0;
+            padding: 0;
             background: #ffffff;
-            padding: 12px;
-            text-align: center;
         }
 
         .banner-image img {
-            width: 100%;
-            max-width: 1600px;
-            height: auto;
             display: block;
-            margin: 0 auto;
-            border-radius: 14px;
+            width: 100%;
+            max-width: none;
+            height: auto;
+            margin: 0;
+            padding: 0;
         }
 
         /* Navigation */
         header {
-            background: #2d3748;
-            padding: 18px 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            background: #2d3748;
+            padding: 18px 40px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
         }
 
         .header-content {
@@ -83,66 +83,45 @@
             color: #fbd38d;
         }
 
-        /* Hero lamp area */
+        /* Main welcome section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 65px 25px;
+            padding: 75px 25px;
             text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .hero h1 {
-            color: #ffffff;
-            font-size: 48px;
+            font-size: 50px;
             line-height: 1.15;
-            margin-bottom: 15px;
-            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+            margin-bottom: 16px;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.25);
         }
 
         .hero p {
-            color: #ffffff;
             font-size: 21px;
-            margin-bottom: 30px;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.35));
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-14px);
-            }
+            opacity: 0.96;
         }
 
         /* Video section */
         .video-section {
-            background: #ffffff;
             padding: 80px 35px;
             text-align: center;
+            background: #ffffff;
         }
 
         .section-title {
+            margin-bottom: 42px;
             color: #2d3748;
             font-size: 42px;
-            margin-bottom: 42px;
         }
 
         .video-grid {
-            max-width: 1400px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .video-card {
@@ -153,15 +132,15 @@
         }
 
         .video-placeholder {
-            height: 245px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 12px;
+            height: 245px;
             color: #ffffff;
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
             font-size: 19px;
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
         }
 
         .video-placeholder span {
@@ -174,74 +153,313 @@
             font-size: 18px;
         }
 
-        /* Second lamp image */
-        .lamp-intro-section {
+        /* 50% Discount poster */
+        .discount-section {
+            padding: 75px 25px;
             background: #f7fafc;
-            padding: 80px 25px;
+        }
+
+        .discount-poster {
+            position: relative;
+            max-width: 1350px;
+            min-height: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: #ffffff;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255, 238, 140, 0.38), transparent 23%),
+                radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.22), transparent 26%),
+                linear-gradient(135deg, #5420a8 0%, #9d3dd6 48%, #f5576c 100%);
+            box-shadow: 0 20px 42px rgba(91, 40, 137, 0.34);
         }
 
-        .lamp-intro-section h2 {
-            color: #2d3748;
-            font-size: 42px;
-            margin-bottom: 18px;
+        .discount-poster::before {
+            content: "✦  ✧  ✦  ✧  ✦  ✧  ✦";
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 30px;
+            letter-spacing: 15px;
+            animation: sparkleMove 5s linear infinite;
         }
 
-        .lamp-intro-section p {
-            color: #4a5568;
-            max-width: 720px;
-            margin: 0 auto 35px;
+        .discount-poster::after {
+            content: "🪔";
+            position: absolute;
+            right: 8%;
+            bottom: 25px;
+            color: #ffd86b;
+            font-size: 150px;
+            filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.3));
+            transform: rotate(-8deg);
+        }
+
+        .discount-content {
+            position: relative;
+            z-index: 2;
+            padding: 45px 210px 45px 45px;
+        }
+
+        .discount-tag {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            color: #5623a8;
+            background: #fff2a9;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .discount-content h2 {
+            font-size: 76px;
+            line-height: 1;
+            color: #fff3ae;
+            text-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .discount-content h3 {
+            margin-top: 12px;
+            font-size: 34px;
+        }
+
+        .discount-content p {
+            margin-top: 12px;
             font-size: 20px;
         }
 
-        .lamp-intro-image {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.3));
+        .shop-now-button {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            color: #5720a7;
+            background: #ffffff;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 0.25s ease;
         }
 
-        /* Interactive lamp */
-        .genie-lamp-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        .shop-now-button:hover {
+            transform: scale(1.06);
+        }
+
+        @keyframes sparkleMove {
+            0% {
+                transform: translateX(-10px);
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(10px);
+                opacity: 0.5;
+            }
+        }
+
+        /* Animated Jinny poster */
+        .jinny-section {
+            padding: 85px 25px;
+            text-align: center;
             color: #ffffff;
+            background: linear-gradient(135deg, #1e174d 0%, #5420a8 52%, #9d3dd6 100%);
+        }
+
+        .jinny-section h2 {
+            margin-bottom: 12px;
+            font-size: 44px;
+        }
+
+        .jinny-section > p {
+            margin-bottom: 42px;
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        .jinny-card {
+            position: relative;
+            max-width: 1100px;
+            min-height: 390px;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.33), transparent 14%),
+                radial-gradient(circle at 20% 72%, rgba(249, 199, 79, 0.22), transparent 16%),
+                radial-gradient(circle at 82% 67%, rgba(246, 115, 165, 0.22), transparent 17%),
+                rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .jinny-card::before {
+            content: "✦";
+            position: absolute;
+            top: 42px;
+            left: 12%;
+            color: #fff1a2;
+            font-size: 45px;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        .jinny-card::after {
+            content: "✧";
+            position: absolute;
+            right: 13%;
+            bottom: 45px;
+            color: #ffffff;
+            font-size: 52px;
+            animation: twinkle 2.4s ease-in-out infinite;
+        }
+
+        .magic-smoke {
+            position: absolute;
+            bottom: 54px;
+            left: 50%;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(178, 136, 255, 0.75), rgba(178, 136, 255, 0));
+            animation: smokeRise 3.5s ease-in-out infinite;
+        }
+
+        .magic-lamp-icon {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
+            color: #ffd86b;
+            font-size: 125px;
+            filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.3));
+            animation: lampFloat 3s ease-in-out infinite;
+        }
+
+        .jinny-character {
+            position: relative;
+            z-index: 3;
+            margin-bottom: 15px;
+            font-size: 130px;
+            filter: drop-shadow(0 15px 18px rgba(0, 0, 0, 0.35));
+            animation: jinnyFloat 3.5s ease-in-out infinite;
+        }
+
+        .jinny-text {
+            position: relative;
+            z-index: 4;
+            padding: 25px;
+        }
+
+        .jinny-text h3 {
+            margin-bottom: 8px;
+            font-size: 34px;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .jinny-text p {
+            font-size: 19px;
+        }
+
+        @keyframes smokeRise {
+            0%, 100% {
+                opacity: 0.3;
+                transform: translateX(-50%) translateY(10px) scale(0.85);
+            }
+
+            50% {
+                opacity: 0.85;
+                transform: translateX(-50%) translateY(-75px) scale(1.3);
+            }
+        }
+
+        @keyframes lampFloat {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-10px) rotate(3deg);
+            }
+        }
+
+        @keyframes jinnyFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(0.7) rotate(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.25) rotate(20deg);
+            }
+        }
+
+        /* One large working lamp */
+        .genie-lamp-section {
             padding: 95px 25px;
             text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
         .genie-lamp-section h2 {
+            margin-bottom: 16px;
             font-size: 46px;
             line-height: 1.2;
-            margin-bottom: 16px;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
         }
 
         .genie-lamp-section p {
-            font-size: 21px;
             margin-bottom: 42px;
+            font-size: 21px;
         }
 
         .lamp-container {
-            max-width: 600px;
-            margin: 0 auto;
             position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .lamp-image {
-            width: 100%;
-            max-width: 390px;
-            height: auto;
             display: block;
+            width: 100%;
+            max-width: 750px;
+            height: auto;
             margin: 0 auto;
             cursor: pointer;
-            filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));
+            filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.38));
             transition: transform 0.25s ease;
         }
 
         .lamp-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .fog {
@@ -317,25 +535,25 @@
         }
 
         .offer-1 {
-            top: 6%;
-            left: 0;
+            top: 8%;
+            left: 5%;
             background: #fed7e2;
         }
 
         .offer-2 {
-            top: 4%;
-            right: 0;
+            top: 6%;
+            right: 5%;
             background: #c6f6d5;
         }
 
         .offer-3 {
             bottom: 25%;
-            left: 0;
+            left: 5%;
             background: #feebc8;
         }
 
         .offer-4 {
-            right: 0;
+            right: 5%;
             bottom: 22%;
             background: #bee3f8;
         }
@@ -352,23 +570,23 @@
 
         /* Round categories */
         .categories {
-            background: #f7fafc;
             padding: 90px 35px;
+            background: #f7fafc;
         }
 
         .categories h2 {
+            margin-bottom: 65px;
             color: #2d3748;
             font-size: 46px;
             text-align: center;
-            margin-bottom: 65px;
         }
 
         .categories-grid {
-            max-width: 1600px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
         .category-card {
@@ -406,12 +624,11 @@
             text-align: center;
         }
 
-        /* Footer */
         footer {
             padding: 45px 25px;
-            background: #2d3748;
             color: #a0aec0;
             text-align: center;
+            background: #2d3748;
         }
 
         .footer-links {
@@ -448,12 +665,25 @@
             }
 
             .header-content {
-                gap: 15px;
                 flex-direction: column;
+                gap: 15px;
             }
 
             .nav-links {
                 justify-content: center;
+            }
+
+            .lamp-image {
+                max-width: 620px;
+            }
+
+            .discount-content {
+                padding-right: 160px;
+            }
+
+            .discount-poster::after {
+                font-size: 110px;
+                right: 4%;
             }
         }
 
@@ -475,25 +705,70 @@
             }
 
             .hero h1,
-            .genie-lamp-section h2 {
+            .genie-lamp-section h2,
+            .jinny-section h2 {
                 font-size: 32px;
             }
 
             .hero p,
-            .genie-lamp-section p {
+            .genie-lamp-section p,
+            .jinny-section > p {
                 font-size: 17px;
             }
 
             .section-title,
-            .lamp-intro-section h2,
             .categories h2 {
                 font-size: 32px;
             }
 
             .video-section,
-            .lamp-intro-section,
+            .discount-section,
             .categories {
                 padding: 60px 18px;
+            }
+
+            .jinny-section,
+            .genie-lamp-section {
+                padding: 70px 16px;
+            }
+
+            .discount-poster {
+                min-height: 390px;
+            }
+
+            .discount-content {
+                padding: 35px 20px 145px;
+            }
+
+            .discount-content h2 {
+                font-size: 58px;
+            }
+
+            .discount-content h3 {
+                font-size: 26px;
+            }
+
+            .discount-poster::after {
+                right: 50%;
+                bottom: 8px;
+                font-size: 100px;
+                transform: translateX(50%);
+            }
+
+            .jinny-card {
+                min-height: 390px;
+            }
+
+            .jinny-character {
+                font-size: 105px;
+            }
+
+            .jinny-text h3 {
+                font-size: 27px;
+            }
+
+            .lamp-image {
+                max-width: 100%;
             }
 
             .categories-grid {
@@ -525,7 +800,7 @@
 
 <body>
 
-    <!-- ऊपर आपका main Wish Jinny banner -->
+    <!-- Top main banner -->
     <section class="banner-image">
         <img src="./assets/wish-jinny-banner.png" alt="Wish Jinny Main Banner">
     </section>
@@ -537,26 +812,21 @@
 
             <nav class="nav-links">
                 <a href="#video">Video</a>
-                <a href="#lamp-intro">Lamp</a>
+                <a href="#discount">Offers</a>
+                <a href="#magic-jinny">Jinny Magic</a>
                 <a href="#rub-lamp">Rub Lamp</a>
                 <a href="#categories">Categories</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main lamp image -->
+    <!-- Welcome -->
     <section class="hero">
         <h1>Make a Wish with Wish Jinny</h1>
-        <p>Rub the lamp and discover amazing offers</p>
-
-        <img
-            src="./assets/lamp-rub.png"
-            alt="Wish Jinny Magic Lamp"
-            class="hero-image"
-        >
+        <p>Explore exciting products, offers, and magical deals.</p>
     </section>
 
-    <!-- Video section -->
+    <!-- Videos -->
     <section class="video-section" id="video">
         <h2 class="section-title">Watch How It Works</h2>
 
@@ -587,19 +857,37 @@
         </div>
     </section>
 
-    <!-- Video के नीचे वाली दूसरी lamp image -->
-    <section class="lamp-intro-section" id="lamp-intro">
-        <h2>Discover the Magic Lamp</h2>
-        <p>Rub the magical genie lamp and unlock offers, coupons, and discounts.</p>
-
-        <img
-            src="./assets/lamp-rub.png"
-            alt="Magic Lamp"
-            class="lamp-intro-image"
-        >
+    <!-- First empty lamp place: 50% discount poster -->
+    <section class="discount-section" id="discount">
+        <div class="discount-poster">
+            <div class="discount-content">
+                <div class="discount-tag">LIMITED TIME MAGIC OFFER</div>
+                <h2>50% OFF</h2>
+                <h3>Wish Big. Save Bigger.</h3>
+                <p>Unlock magical shopping deals with Wish Jinny.</p>
+                <a href="#categories" class="shop-now-button">SHOP NOW</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Interactive rub-lamp section -->
+    <!-- Second empty lamp place: Jinny animation -->
+    <section class="jinny-section" id="magic-jinny">
+        <h2>Jinny’s Magic is Waiting</h2>
+        <p>Make a wish and let the surprises begin.</p>
+
+        <div class="jinny-card">
+            <div class="magic-smoke"></div>
+            <div class="magic-lamp-icon">🪔</div>
+
+            <div class="jinny-text">
+                <div class="jinny-character">🧞</div>
+                <h3>Hello! I’m Your Wish Jinny</h3>
+                <p>Discover special offers, surprise discounts, and magical rewards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lamp only once, large and clickable -->
     <section class="genie-lamp-section" id="rub-lamp">
         <h2>Rub the Lamp, Get Amazing Offers!</h2>
         <p>Click the lamp to reveal exclusive discounts.</p>
@@ -623,7 +911,7 @@
         <div class="rub-instruction">👆 Click on the lamp to rub it!</div>
     </section>
 
-    <!-- Categories -->
+    <!-- Round categories -->
     <section class="categories" id="categories">
         <h2>Shop by Category</h2>
 
